@@ -23,6 +23,12 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# image processing and upload
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 3.8.1'
+gem 'fog', '~> 1.24.0'
+
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara', '~> 2.4.4'
