@@ -1,0 +1,9 @@
+$link = $("#promotion_<%= @promotion.id %>");
+$link.text("<%= toggle_visibility(@promotion) %>");
+if ($link.text() == "Verbergen") {
+  $(".messages").empty().append("<p class='notice'>De actie is nu zichtbaar</p>");
+}
+  else {
+    $(".messages").empty().append("<p class='notice'>De actie is nu verborgen</p>");
+}
+

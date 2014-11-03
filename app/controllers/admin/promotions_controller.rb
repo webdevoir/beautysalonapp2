@@ -41,6 +41,13 @@ class Admin::PromotionsController < ApplicationController
     redirect_to admin_promotions_path, notice: "De actie werd verwijderd"
   end
 
+  def hide
+    @promotion = Promotion.find(params[:id])
+    @promotion.toggle_visibility!
+    render "hide.js.erb"
+  end
+  
+
   private
 
   def promotion_params

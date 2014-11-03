@@ -1,10 +1,16 @@
 <%= button_to "Actie Toevoegen", new_admin_promotion_path, method: "get" %>
 <table>
-  <% @promotions.each do |promotion| %>
-    <tr>
-      <td><%= link_to promotion.title, admin_promotion_path(promotion) %></td>
-      <td><%= link_to "Aanpassen", edit_admin_promotion_path(promotion) %>&nbsp;&nbsp;<%= link_to "Verwijderen", admin_promotion_path(promotion), method: :delete, data: { confirm: "Ben je zeker?" } %></td>
-    </tr>
+  <% if @promotions.count != 0 %>
+    <% @promotions.each do |promotion| %>
+      <tr>
+        <td><%= link_to promotion.title, admin_promotion_path(promotion) %></td>
+        <td><%= link_to "Aanpassen", edit_admin_promotion_path(promotion) %>&nbsp;&nbsp;<%= link_to "Verwijderen", admin_promotion_path(promotion), method: :delete, data: { confirm: "Ben je zeker?" } %>&nbsp;&nbsp;
+          <%= link_to toggle_visibility(promotion), hide_admin_promotion_path(promotion), method: :patch, remote: true, id: dom_id(promotion) %></td>
+        
+      </tr>
+    <% end %>
+  <% else %>
+    <p>Er zijn momenteel geen acties, voeg een nieuwe actie toe</p>
   <% end %>
 </table>
 

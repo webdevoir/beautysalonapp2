@@ -8,6 +8,12 @@ feature 'Admin interacts with promotions' do
     expect(page).to have_css 'td', text: promotion.title
   end
 
+  scenario 'admin sees message when no promotions available' do
+    visit admin_promotions_path
+
+    expect(page).to have_css 'p', text: 'Er zijn momenteel geen acties, voeg een nieuwe actie toe'
+  end
+
   scenario 'admin clicks promotion and views promotion details' do
     promotion = Promotion.create(title: "promotion1", tagline: "this is the tagline", description: "this is promotion 1")
     visit admin_promotions_path
