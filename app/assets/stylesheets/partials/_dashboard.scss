@@ -1,0 +1,77 @@
+section.dashboard {
+
+  nav {
+    margin-top: em(20);
+    li {
+      line-height: 2em;
+    }
+  }
+
+  form {
+    @include span-columns(8);
+    input[type="submit"]{
+      margin-top: em(20);
+    }
+    input[type="text"].year, input[type="text"].series {
+      width: em(100);
+    }
+
+    input[type="text"].phone {
+      width: em(200);
+    }
+
+    &.filter {
+      label, select {
+        display: inline;
+      }
+      input[type="submit"] {
+        padding: .5em;
+        margin-top: 0;
+      }
+    }
+
+    .froala-box {
+      margin-bottom: em(20);
+    }
+  }
+
+  .button_to {
+    margin-top: em(20);
+    margin-bottom: em(20);
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .content {
+    @include media($medium-screen) {
+      @include span-columns(8);
+    }
+  }
+
+  .panel {
+    @include clearfix;
+    background: lighten($base-border-color, 10);
+    border: 1px solid $base-border-color;
+    margin: 0 0 ($base-line-height / 2) 0;
+    padding: $base-line-height;
+
+    img {
+      float: right;
+    }
+
+    section {
+      margin-top: em(20);
+      margin-bottom: em(20);
+    }
+
+    i {
+      color: $base-accent-color;
+      &.right {
+        margin-left: em(10);
+      }
+    }
+  }
+}
+

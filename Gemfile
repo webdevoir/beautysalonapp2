@@ -28,11 +28,17 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.8.1'
 gem 'fog', '~> 1.24.0'
 
+# Sass tools
+gem 'bourbon'
+gem 'neat'
+
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara', '~> 2.4.4'
   gem 'launchy', '~> 2.4.2'
+  gem 'factory_girl_rails', '~> 4.5.0'
 end
 
 group :test do

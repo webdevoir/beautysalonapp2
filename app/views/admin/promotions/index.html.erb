@@ -1,5 +1,5 @@
 <%= button_to "Actie Toevoegen", new_admin_promotion_path, method: "get" %>
-<table>
+<table class="table-borders">
   <% if @promotions.count != 0 %>
     <% @promotions.each do |promotion| %>
       <tr>

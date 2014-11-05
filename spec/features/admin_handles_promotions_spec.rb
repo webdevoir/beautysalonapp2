@@ -1,25 +1,24 @@
 require 'rails_helper'
 
 feature 'Admin interacts with promotions' do
-
+  let!(:promotion) { create(:promotion) }
   scenario 'admin views promotions' do
-    promotion = Promotion.create(title: "promotion1", description: "this is promotion 1")
     visit admin_promotions_path
     expect(page).to have_css 'td', text: promotion.title
   end
 
   scenario 'admin sees message when no promotions available' do
+    Promotion.destroy(promotion)
     visit admin_promotions_path
 
     expect(page).to have_css 'p', text: 'Er zijn momenteel geen acties, voeg een nieuwe actie toe'
   end
 
   scenario 'admin clicks promotion and views promotion details' do
-    promotion = Promotion.create(title: "promotion1", tagline: "this is the tagline", description: "this is promotion 1")
     visit admin_promotions_path
     click_link promotion.title
     expect(page).to have_css 'h1', text: promotion.title
-    expect(page).to have_css 'p', text: "this is the tagline"
+    expect(page).to have_css 'p', text: promotion.tagline 
     expect(page).to have_css 'p', text: promotion.description
   end
   
@@ -60,7 +59,6 @@ feature 'Admin interacts with promotions' do
   end
   
   scenario 'admin sees success message when editing a promotion' do
-    promotion = Promotion.create(title: "promotion1", tagline: "this is the tagline", description: "this is promotion 1")
     visit admin_promotions_path
     find("a[href='/admin/promotions/#{promotion.id}/edit']").click
     find("input[@id='promotion_title']").set("new title")
@@ -72,7 +70,6 @@ feature 'Admin interacts with promotions' do
   end
   
   scenario 'admin sees error message when editing invalid promotion' do
-    promotion = Promotion.create(title: "promotion1", tagline: "this is the tagline", description: "this is promotion 1")
     visit admin_promotions_path
 
     find("a[href='/admin/promotions/#{promotion.id}/edit']").click
@@ -85,7 +82,6 @@ feature 'Admin interacts with promotions' do
   end
 
   scenario 'an admin deletes a course' do
-    promotion = Promotion.create(title: "promotion1", tagline: "this is the tagline", description: "this is promotion 1")
     visit admin_promotions_path
 
     click_link 'Verwijderen'
