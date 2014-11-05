@@ -20,6 +20,7 @@ feature 'Admin interacts with promotions' do
     expect(page).to have_css 'h1', text: promotion.title
     expect(page).to have_css 'p', text: promotion.tagline 
     expect(page).to have_css 'p', text: promotion.description
+    expect(page).to have_css 'p', text: promotion.price
   end
   
   scenario 'admin sees success message when adding a valid promotion' do
@@ -29,6 +30,7 @@ feature 'Admin interacts with promotions' do
     fill_in 'Titel', with: "some title"
     fill_in 'Tagline', with: "some tagline"
     fill_in 'Beschrijving', with: "some description"
+    fill_in 'Prijs', with: "40.16"
     click_button 'Actie Toevoegen'
 
     expect(page).to have_css 'p', text: "Er werd een nieuwe actie toegevoegd"

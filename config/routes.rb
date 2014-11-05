@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: "homes#index"
 
+  resources :promotions, only: [:show]
+
   get 'admin', to: 'dashboard#index'
 
   namespace :admin do

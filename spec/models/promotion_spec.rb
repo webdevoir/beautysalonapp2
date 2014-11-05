@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "A promotion" do
   it "requires a title" do
-    promotion = Promotion.new(title: "", tagline: "this is a tagline", description: "this is a description")
+    promotion = build(:promotion, title: "") 
 
     expect(promotion.valid?).to eq(false)
   end
@@ -11,5 +11,17 @@ describe "A promotion" do
     promotion = Promotion.new(title: "promotion1", tagline: "this is a tagline", description: "")
 
     expect(promotion.valid?).to eq(false)
+  end
+
+  it "has a valid price" do
+    promotion = build(:promotion, price: "hello")
+
+    expect(promotion.valid?).to eq(false)
+  end
+
+  it "accepts a blank price" do
+    promotion = build(:promotion, price: "")
+
+    expect(promotion.valid?).to eq(true)
   end
 end

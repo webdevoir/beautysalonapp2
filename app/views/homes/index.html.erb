@@ -14,11 +14,19 @@
   <div class="acties-inner">
     <h2>Acties</h2>
     <div class="actie">
-      <% @promotions.each do |promotion| %>
-        <p class="title"><%= promotion.title %></p>
-      <p class="tagline"><%= promotion.tagline %></p>
-      <%= image_tag promotion.image %>
-      <p><%= promotion.description %></p>
+      <% if !(@promotions.count > 1) %>
+        <% @promotions.each do |promotion| %>
+        <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
+        <p class="tagline"><%= promotion.tagline %></p>
+        <%= image_tag promotion.image %>
+        <p><%= promotion.description %></p>
+        <% end %>
+      <% else %>
+        <% @promotions.each do |promotion| %>
+        <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
+        <p class="tagline"><%= promotion.tagline %></p>
+        <p><%= promotion.description %></p>
+        <% end %>
       <% end %>
   </div>
 </div>

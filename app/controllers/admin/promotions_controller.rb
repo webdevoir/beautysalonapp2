@@ -51,6 +51,6 @@ class Admin::PromotionsController < ApplicationController
   private
 
   def promotion_params
-    params.required(:promotion).permit(:title, :tagline, :description, :image)
+    params.required(:promotion).permit(:title, :tagline, :description, :image, :price)
   end
 end

@@ -1,0 +1,19 @@
+<article class="actie">
+  <div class="breadcrumb">
+    <a href="/gelaatsverzorgingen.html">Acties</a>
+    <a href="javascript:void(0)">Environ Peeling Kuur</a>
+  </div>
+  <header>
+<h1><%= @promotion.title %></h1>
+    <p class="tagline"><%= @promotion.tagline %></p>
+  </header>
+  <aside>
+    <%= image_tag @promotion.image %>
+  </aside>
+  <div class="content">
+    <p><%= @promotion.description %></p>
+    <p class="price">Prijs: <%= number_to_currency(@promotion.price, :unit => "€") %></p>
+    <button>Maak een Afspraak</button>
+  </div>
+</article>
+

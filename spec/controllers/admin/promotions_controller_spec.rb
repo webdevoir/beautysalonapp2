@@ -4,7 +4,7 @@ describe Admin::PromotionsController do
   describe "POST create" do
     context "with valid input" do
       it "creates a new promotion" do
-        post :create, promotion: { title: "promotion1", tagline: "this a tagline", description: "this is a description" }
+        post :create, promotion: { title: "promotion1", tagline: "this a tagline", description: "this is a description", price: "40.16" }
         expect(Promotion.count).to eq(1) 
       end
 
@@ -23,7 +23,7 @@ describe Admin::PromotionsController do
 
     context "with invalid input" do
       it "does not create a promotion" do
-        post :create, promotion: { title: "", tagline: "this a tagline", description: "this is a description" }
+        post :create, promotion: { title: "promotion1", tagline: "this a tagline", description: "this is a description", price: "hello" }
 
         expect(Promotion.count).to eq(0)
       end

@@ -16,6 +16,10 @@
       <%= f.label :image %>
       <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
     </div>
+    <div>
+      <%= f.label :price, "Prijs" %>
+      <%= f.text_field :price %>
+    </div>
     <% if @promotion.new_record? %>
       <%= f.button "Actie Toevoegen" %>
     <% else %>
