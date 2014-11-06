@@ -32,6 +32,11 @@ gem 'fog', '~> 1.24.0'
 gem 'bourbon'
 gem 'neat'
 
+gem 'capistrano', '~> 3.2.1'
+gem 'capistrano-bundler', '~> 1.1.3'
+gem 'capistrano-rails', '~> 1.1.2'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
 
 
 group :development, :test do

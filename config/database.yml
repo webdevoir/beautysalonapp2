@@ -16,3 +16,10 @@ test:
   <<: *default
   database:  beautysalonapp2_test 
 
+production:
+  database: deploy
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: deploy
+  password: 21a06c70
