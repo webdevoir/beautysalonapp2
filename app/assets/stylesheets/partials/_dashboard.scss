@@ -1,10 +1,24 @@
 section.dashboard {
 
+  @include outer-container;
+
+
+  a {
+    color: $dark-gray;
+  }
+
+  .panel {
+    margin-top: em(40);
+    padding: 3em;
+  }
+
   nav {
     margin-top: em(20);
+
     li {
       line-height: 2em;
     }
+
   }
 
   form {
@@ -57,13 +71,20 @@ section.dashboard {
     margin: 0 0 ($base-line-height / 2) 0;
     padding: $base-line-height;
 
-    img {
-      float: right;
+    h1 {
+      margin-bottom: em(20);
+      color: $dark-gray;
     }
 
-    section {
-      margin-top: em(20);
-      margin-bottom: em(20);
+    h2 {
+      font-size: $base-font-size;
+      margin-bottom: em(5);
+    }
+
+
+    .section {
+      margin-top: em(40);
+      margin-bottom: em(40);
     }
 
     i {

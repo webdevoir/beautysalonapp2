@@ -1,6 +1,22 @@
-<h1><%= @promotion.title %></h1>
-<p><%= @promotion.tagline %></p>
-<p><%= @promotion.description %></p>
-<%= image_tag @promotion.image.url %>
-<p><%= @promotion.price %></p>
+<section class="dashboard">
+  <div class="panel">
+    <h1><%= @promotion.title %></h1>
+    <div class="section">
+      <h2>Tagline</h2>
+      <p><%= @promotion.tagline %></p>
+    </div>
+    <div class="section">
+      <h2>Beschrijving</h2>
+      <p><%= @promotion.description %></p>
+    </div>
+    <div class="section">
+      <h2>Prijs</h2>
+      <p><%= @promotion.price %></p>
+    </div>
+    <div class="section">
+      <h2>Afbeelding</h2>
+      <%= image_tag @promotion.image.url %>
+    </div>
+  </div>
+</section>
 
