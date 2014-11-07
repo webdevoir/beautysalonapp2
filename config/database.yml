@@ -17,7 +17,7 @@ test:
   database:  beautysalonapp2_test 
 
 production:
-  database: deploy
+  database: beautysalon
   adapter: postgresql
   encoding: unicode
   pool: 5
