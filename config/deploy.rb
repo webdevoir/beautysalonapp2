@@ -2,6 +2,7 @@ set :application, 'beautysalon'
 set :repo_url, 'git@github.com:acandael/beautysalonapp2.git'
 
 set :deploy_to, '/home/deploy/beautysalon'
+set :branch, ENV['BRANCH'] || "master"
 
 set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}

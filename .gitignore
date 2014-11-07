@@ -17,3 +17,6 @@
 
 # Ignore database credentials
 /config/database.yml
+
+# Ignore access keys
+/config/secrets.yml
