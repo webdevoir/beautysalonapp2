@@ -10,7 +10,7 @@ feature 'Visitor visits homepage' do
       expect(page).to have_css 'p.title', text: promotion.title
       expect(page).to have_css 'p.tagline', text: promotion.tagline
       expect(page).to have_css 'p', text: promotion.description
-      expect(page).to have_xpath("//img[@src='/Users/acandael/Sites/beautysalonapp2/spec/support/uploads/promotion/image/#{promotion.id}/#{File.basename(promotion.image.url)}']")
+      expect(page).to have_xpath("//img[contains(@src,'#{File.basename(promotion.image.url)}')]")
     end
   end
 
@@ -31,9 +31,8 @@ feature 'Visitor visits homepage' do
     visit root_path
 
     within(".acties-inner") do
-      expect(page).not_to have_xpath("//img[@src='/Users/acandael/Sites/beautysalonapp2/spec/support/uploads/promotion/image/#{promotion1.id}/#{File.basename(promotion1.image.url)}']")
- 
-      expect(page).not_to have_xpath("//img[@src='/Users/acandael/Sites/beautysalonapp2/spec/support/uploads/promotion/image/#{promotion2.id}/#{File.basename(promotion2.image.url)}']")
+      expect(page).to_not have_css("img[src*='#{File.basename(promotion1.image.url)}']")
+      expect(page).to_not have_css("img[src*='#{File.basename(promotion2.image.url)}']")
     end
   end
 
@@ -46,7 +45,7 @@ feature 'Visitor visits homepage' do
     expect(page).to have_css 'h1', text: promotion.title
     expect(page).to have_css 'p.tagline', text: promotion.tagline
     expect(page).to have_css 'p', text: promotion.description
-    expect(page).to have_xpath("//img[@src='/Users/acandael/Sites/beautysalonapp2/spec/support/uploads/promotion/image/#{promotion.id}/#{File.basename(promotion.image.url)}']")
+    expect(page).to have_xpath("//img[contains(@src,'#{File.basename(promotion.image.url)}')]")
     expect(page).to have_css 'p.price', text: promotion.price
   end
 end
