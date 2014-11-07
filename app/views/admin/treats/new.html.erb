@@ -1,0 +1,25 @@
+<%= form_for [:admin, @treat] do |f| %>
+  <fieldset>
+    <div>
+      <%= f.label :title, "Titel" %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :tagline, "Tagline" %>
+      <%= f.text_field :tagline %>
+    </div>
+    <div>
+      <%= f.label :summary, "Samenvatting" %>
+      <%= f.text_area :summary %>
+    </div>
+    <div>
+      <%= f.label :description, "Beschrijving" %>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.label :price, "Prijs" %>
+      <%= f.text_field :price %>
+    </div>
+    <%= f.button "Behandeling Toevoegen" %>
+  </fieldset>
+<% end %>

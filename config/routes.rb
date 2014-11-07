@@ -15,5 +15,7 @@ Rails.application.routes.draw do
         patch :hide
       end
     end
+
+    resources :treats
   end
 end

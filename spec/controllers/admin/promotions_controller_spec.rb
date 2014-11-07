@@ -90,7 +90,7 @@ describe Admin::PromotionsController do
   describe "DELETE #destroy" do
     let(:promotion) { Promotion.create(title: "promotion1", tagline: "this is a tagline", description: "this is a description") } 
 
-    it "deletes the researcher" do
+    it "deletes the promotion" do
       delete :destroy, id: promotion.id
 
       expect(Promotion.count).to eq(0)

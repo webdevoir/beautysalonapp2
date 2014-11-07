@@ -83,7 +83,7 @@ feature 'Admin interacts with promotions' do
     expect(page).to have_content "Title can't be blank"
   end
 
-  scenario 'an admin deletes a course' do
+  scenario 'an admin deletes a promotion' do
     visit admin_promotions_path
 
     click_link 'Verwijderen'
