@@ -78,7 +78,7 @@ feature 'Admin interacts with treatments' do
 
   scenario 'an admin deletes a treatment' do
     click_link 'Verwijderen'
-    expect(page).to have_content, text: "De behandeling werd verwijderd"
+    expect(page).to have_css 'p', text: "De behandeling werd verwijderd"
     expect(page).to_not have_css 'a', text: "title1"
   end
 end
