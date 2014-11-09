@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: "homes#index"
 
+  get 'behandelingen' => "treatments#index"
+
   get 'signin' => "sessions#new"
   resource :session
 
@@ -16,6 +18,6 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :treats
+    resources :treatments
   end
 end

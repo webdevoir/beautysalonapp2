@@ -8,7 +8,7 @@ describe "A promotion" do
   end
 
   it "requires a description" do
-    promotion = Promotion.new(title: "promotion1", tagline: "this is a tagline", description: "")
+    promotion = build(:promotion, description: nil) 
 
     expect(promotion.valid?).to eq(false)
   end

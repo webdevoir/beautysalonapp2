@@ -1,0 +1,25 @@
+<section class="dashboard">
+  <div class="panel">
+      <h1><%= @treatment.title %></h1>
+    <div class="section">
+      <h2>Tagline</h2>
+      <p><%= @treatment.tagline %></p>
+    </div>
+    <div class="section">
+      <h2>Samenvatting</h2>
+      <p><%= @treatment.summary %></p>
+    </div>
+    <div class="section">
+      <h2>Beschrijving</h2>
+      <p><%= @treatment.description %></p>
+    </div>
+    <div class="section">
+      <h2>Afbeelding</h2>
+      <%= image_tag @treatment.image.url %>
+    </div>
+    <div class="section">
+      <h2>Prijs</h2>
+      <p><%= @treatment.price %></p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="dashboard">
+  <%= button_to "Behandeling Toevoegen", new_admin_treatment_path, method: "get" %>
+  <table class="table-borders">
+    <% if @treatments.count != 0 %>
+      <% @treatments.each do |treatment| %>
+        <tr>
+          <td><%= link_to treatment.title, admin_treatment_path(treatment) %></td>
+          <td><%= link_to "Aanpassen", edit_admin_treatment_path(treatment) %>&nbsp;&nbsp;
+            <%= link_to "Verwijderen", admin_treatment_path(treatment), method: :delete, data: { confirm: "Ben je zeker?" } %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <p>Er zijn momenteel geen behandelingen, voeg een nieuwe behandeling toe</p>
+    <% end %>
+  </table>
+</section>

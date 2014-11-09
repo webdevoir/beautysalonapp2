@@ -1,0 +1,12 @@
+<h1>Behandelingen</h1>
+<% @treatments.each do |treatment| %>
+  <div class="item">
+    <header>
+      <h1><%= treatment.title %></h1>
+    </header>
+    <img src="/images/environ-peeling-kuur.jpg" alt="environ peeling kuur" />
+    <p>Eerste gelaatsbehandeling met complete en grondige huidanalyse, persoonlijk advies en opstellen van een behandelingsplan.</p>
+    <p class="more_info"><a href="/gelaatsverzorging.html">Meer weten</a></p>
+    <button>Maak een afspraak</button>
+  </div>
+<% end %>

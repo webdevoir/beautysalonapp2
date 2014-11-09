@@ -4,18 +4,18 @@ describe Admin::PromotionsController do
   describe "POST create" do
     context "with valid input" do
       it "creates a new promotion" do
-        post :create, promotion: { title: "promotion1", tagline: "this a tagline", description: "this is a description", price: "40.16" }
+        post :create, promotion: attributes_for(:promotion) 
         expect(Promotion.count).to eq(1) 
       end
 
       it "redirects to the promotions page" do
-        post :create, promotion: { title: "promotion1", tagline: "this a tagline", description: "this is a description" }
+        post :create, promotion: attributes_for(:promotion) 
 
         expect(response).to redirect_to admin_promotions_path
       end
 
       it "sets the flash success message" do
-        post :create, promotion: { title: "promotion1", tagline: "this a tagline", description: "this is a description" }
+        post :create, promotion: attributes_for(:promotion) 
 
         expect(flash[:notice]).to be_present
       end
@@ -23,19 +23,19 @@ describe Admin::PromotionsController do
 
     context "with invalid input" do
       it "does not create a promotion" do
-        post :create, promotion: { title: "promotion1", tagline: "this a tagline", description: "this is a description", price: "hello" }
+        post :create, promotion: attributes_for(:promotion, price: "hello") 
 
         expect(Promotion.count).to eq(0)
       end
 
       it "renders the new template" do
-        post :create, promotion: { title: "", tagline: "this a tagline", description: "this is a description" }
+        post :create, promotion: attributes_for(:promotion, price: "hello") 
 
         expect(response).to render_template :new
       end
 
       it "sets the flash alert message" do
-        post :create, promotion: { title: "", tagline: "this a tagline", description: "this is a description" }
+        post :create, promotion: attributes_for(:promotion, price: "hello") 
 
         expect(flash[:alert]).to be_present
       end
@@ -43,7 +43,7 @@ describe Admin::PromotionsController do
   end
 
   describe "PUT#update" do
-    let(:promotion) { Promotion.create(title: "promotion1", tagline: "this is a tagline", description: "this is a description") } 
+    let(:promotion) { create(:promotion) } 
 
     context "with valid input" do
       it "updates an existing promotion" do
@@ -88,7 +88,7 @@ describe Admin::PromotionsController do
   end
 
   describe "DELETE #destroy" do
-    let(:promotion) { Promotion.create(title: "promotion1", tagline: "this is a tagline", description: "this is a description") } 
+    let(:promotion) { create(:promotion) } 
 
     it "deletes the promotion" do
       delete :destroy, id: promotion.id
