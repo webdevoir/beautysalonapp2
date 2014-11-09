@@ -1,0 +1,21 @@
+<article class="behandeling">
+  <div class="breadcrumb">
+    <a href="/gelaatsverzorgingen.html">Gelaatsverzorgingen</a>
+    <a href="javascript:void(0)"><%= @treatment.title %></a>
+  </div>
+  <header>
+    <h1><%= @treatment.title %></h1>
+    <p class="tagline">Een perfecte huidanalyse voor een perfecte behandeling!</p>
+  </header>
+  <aside>
+    <%= image_tag @treatment.image.url %>
+  </aside>
+  <div class="content">
+    <p><%= @treatment.description %></p>
+    <% if @treatment.price.present? %>
+      <p class="price"><strong>Prijs:</strong> <%= @treatment.price %></p>
+    <% end %>
+    <button>Maak een Afspraak</button>
+  </div>
+</article>
+

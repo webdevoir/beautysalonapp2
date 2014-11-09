@@ -36,6 +36,19 @@ html, body {
   height: 100%;
 }
 
+// section
+
+section {
+  @include outer-container;
+  margin-top: em(40);
+
+  h1 {
+    color: darken($pink, 10);
+    font-family: $serif;
+  }
+}
+
+
 // Admin tables
 .table-borders {
   $table-border-color: $base-border-color;

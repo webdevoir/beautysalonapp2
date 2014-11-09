@@ -1,6 +1,10 @@
 <section class="dashboard">
   <div class="panel">
-      <h1><%= @treatment.title %></h1>
+    <h1><%= @treatment.title %></h1>
+    <div class="section">
+      <h2>Categorie</h2>
+      <p><%= @treatment.category.name %></p>
+    </div>
     <div class="section">
       <h2>Tagline</h2>
       <p><%= @treatment.tagline %></p>

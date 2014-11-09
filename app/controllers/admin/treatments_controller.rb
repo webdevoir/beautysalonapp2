@@ -1,6 +1,11 @@
 class Admin::TreatmentsController < ApplicationController
   def index
-    @treatments = Treatment.all
+    if (params.has_key?(:treatment) && (params[:treatment][:category] != ""))
+      @treatments = Treatment.filter(params[:treatment][:category])
+      @selected = params[:treatment].try(:[], :category)
+    else
+      @treatments = Treatment.all
+    end
   end
 
   def show
@@ -45,6 +50,6 @@ class Admin::TreatmentsController < ApplicationController
   private
 
   def treatment_params
-    params.required(:treatment).permit(:title, :tagline, :summary, :description, :image, :price)
+    params.required(:treatment).permit(:title, :tagline, :summary, :description, :image, :price, :category_id)
   end
 end

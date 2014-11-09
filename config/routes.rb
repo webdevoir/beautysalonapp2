@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   root to: "homes#index"
 
-  get 'behandelingen' => "treatments#index"
-
+  resources :categories, only: [:index] do
+    resources :treatments, only: [:index, :show]
+  end
   get 'signin' => "sessions#new"
   resource :session
 

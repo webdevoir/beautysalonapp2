@@ -17,6 +17,9 @@ feature 'Admin interacts with treatments' do
   end
 
   scenario 'admin clicks on treatment title and sees treatment details' do
+    category = Category.create(name: "gelaatsverzorgingen")
+    treatment.category_id = category.id
+    treatment.save
     click_link treatment.title
 
     expect(page).to have_css 'h1', text: treatment.title
@@ -27,7 +30,11 @@ feature 'Admin interacts with treatments' do
   end
 
   scenario 'admin sees success message when adding a valid treat' do
+    Category.create(name: "gelaatsverzorgingen")
+    Category.create(name: "lichaamsbehandelingen")
+
     find("input[@value='Behandeling Toevoegen']").click
+    select "gelaatsverzorgingen", from: "Category"
     fill_in 'Titel', with: "some title"
     fill_in 'Tagline', with: "some tagline"
     fill_in 'Samenvatting', with: "some summary"
@@ -50,7 +57,7 @@ feature 'Admin interacts with treatments' do
 
     expect(page).to have_css 'p', text: "Title can't be blank"
   end
-  
+
   scenario 'admin sees success message when editing a treatment' do
     find("a[href='/admin/treatments/#{treatment.id}/edit']").click
     find("input[@id='treatment_title']").set("new title")

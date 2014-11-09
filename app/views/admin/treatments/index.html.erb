@@ -1,4 +1,8 @@
 <section class="dashboard">
+<%= form_tag admin_treatments_path, method: "get", id: "filter", class: "filter" do %>
+  <%= label_tag "Category" %>
+  <%= select "treatment", "category", options_for_select(options_for_categories, selected: @selected), {prompt: 'All'}, onchange: "$('#filter').submit();" %>
+<% end %>
   <%= button_to "Behandeling Toevoegen", new_admin_treatment_path, method: "get" %>
   <table class="table-borders">
     <% if @treatments.count != 0 %>

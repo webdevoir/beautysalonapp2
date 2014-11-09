@@ -1,6 +1,10 @@
 <%= form_for [:admin, @treatment], html: { id: "treatment-form", multipart: true } do |f| %>
   <fieldset>
     <div>
+      <%= f.label :category_id, "Category" %>
+      <%= f.select :category_id, options_for_categories, label: "Category" %>
+    </div>
+    <div>
       <%= f.label :title, "Titel" %>
       <%= f.text_field :title %>
     </div>
