@@ -1,13 +1,6 @@
-<%= form_for [:admin, @product] do |f| %>
-  <fieldset>
-    <div>
-      <%= f.label :title, "Titel" %>
-      <%= f.text_field :title %>
-    </div>
-    <div>
-      <%= f.label :description, "Beschrijving" %>
-      <%= f.text_area :description %>
-    </div>
-    <%= f.button "Product Toevoegen" %>
-  </fieldset>
-<% end %>
+<section class="dashboard">
+  <div class="panel">
+    <h1>Product Toevoegen</h1>
+    <%= render "form" %>
+  </div>
+</section>

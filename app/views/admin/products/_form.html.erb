@@ -1,0 +1,17 @@
+<%= form_for [:admin, @product] do |f| %>
+  <fieldset>
+    <div>
+      <%= f.label :title, "Titel" %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :description, "Beschrijving" %>
+      <%= f.text_area :description %>
+    </div>
+    <% if @product.new_record? %>
+      <%= f.button "Product Toevoegen" %>
+    <% else %>
+      <%= f.button "Product Aanpassen" %>
+    <% end %>
+  </fieldset>
+<% end %>
