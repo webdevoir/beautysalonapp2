@@ -20,6 +20,7 @@ feature 'Admin interacts with promotions' do
     expect(page).to have_css 'h1', text: promotion.title
     expect(page).to have_css 'p', text: promotion.tagline 
     expect(page).to have_css 'p', text: promotion.description
+    expect(page).to have_xpath("//img[contains(@src,'#{File.basename(promotion.image.url)}')]") 
     expect(page).to have_css 'p', text: promotion.price
   end
   

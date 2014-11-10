@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resource :session
 
   resources :promotions, only: [:show]
+  resources :products, only: [:index]
 
   get 'admin', to: 'dashboard#index'
 

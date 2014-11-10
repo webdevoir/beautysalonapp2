@@ -1,2 +1,13 @@
-<h1><%= @product.title %></h1>
-<p><%= @product.description %></p>
+<section class="dashboard">
+  <div class="panel">
+    <h1><%= @product.title %></h1>
+    <div class="section">
+      <h2>Beschrijving</h2>
+      <p><%= @product.description %></p>
+    </div>
+    <div class="section">
+      <h2>Afbeelding</h2>
+      <%= image_tag @product.image.url %>
+    </div>
+  </div>
+</section>

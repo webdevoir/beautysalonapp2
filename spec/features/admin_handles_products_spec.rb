@@ -21,6 +21,7 @@ feature 'Admin interacts with products' do
 
     expect(page).to have_css 'h1', text: product.title
     expect(page).to have_css 'p', text: product.description
+    expect(page).to have_xpath("//img[contains(@src,'#{File.basename(product.image.url)}')]") 
   end
 
   scenario 'admin sees success message when add a valid product' do

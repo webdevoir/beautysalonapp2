@@ -25,5 +25,6 @@ FactoryGirl.define do
   factory :product do
     title { Faker::Lorem.words(5).join(" ") }
     description { Faker::Lorem.paragraph(2) }
+    image Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/fixtures/products/jane-iredale-logo.jpg')))
   end
 end

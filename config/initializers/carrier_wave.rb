@@ -14,6 +14,7 @@ CarrierWave.configure do |config|
     # make sure our uploader is auto-loaded
     PromotionImageUploader
     TreatmentImageUploader
+    ProductImageUploader
    
 
     # use different dirs when testing
