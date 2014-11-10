@@ -1,23 +1,21 @@
 require 'rails_helper'
 
 feature 'Admin interacts with products' do
+  let!(:product) { create(:product) }
   scenario 'admin views products' do
-    product = Product.create(title: "product1", description: "description1")
-
     visit admin_products_path
 
     expect(page).to have_css 'td', text: product.title
   end
 
   scenario 'admin sees message when no products available' do
+    Product.destroy(product)
     visit admin_products_path
 
     expect(page).to have_css 'p', text: "Er zijn momenteel geen producten, voeg een nieuw product toe"
   end
 
   scenario 'admin clicks on product title and sees product details' do
-    product = Product.create(title: "product1", description: "description1")
-
     visit admin_products_path
     click_link product.title
 
@@ -49,8 +47,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'admin sees success message when editing a product' do
-    product = Product.create(title: "product1", description: "description1")
-
     visit admin_products_path
     
     find("a[href='/admin/products/#{product.id}/edit']").click
@@ -63,8 +59,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'admin sees error message when editing invalid promotion' do
-    product = Product.create(title: "product1", description: "description1")
-
     visit admin_products_path
     
     find("a[href='/admin/products/#{product.id}/edit']").click
@@ -76,8 +70,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'an admin deletes a promotion' do
-    product = Product.create(title: "product1", description: "description1")
-
     visit admin_products_path
 
     click_link 'Verwijderen'
