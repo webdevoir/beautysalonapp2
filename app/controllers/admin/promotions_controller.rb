@@ -30,7 +30,7 @@ class Admin::PromotionsController < ApplicationController
     if @promotion.update_attributes(promotion_params)
       redirect_to admin_promotions_path, notice: "De actie werd aangepast"
     else
-      flash.alert = @promotion.errors.full_messages.join(' ')
+      flash[:alert] = @promotion.errors.full_messages.join(' ')
       render :edit
     end
   end

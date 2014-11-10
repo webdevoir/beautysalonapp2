@@ -1,0 +1,15 @@
+<section class="dashboard">
+  <%= button_to "Product Toevoegen", new_admin_product_path, method: "get" %>
+  <table class="table-borders">
+    <% if @products.count != 0 %>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.title, admin_product_path(product) %></td>
+          <td><%= link_to "Aanpassen", edit_admin_product_path(product) %>&nbsp;&nbsp;<%= link_to "Verwijderen", admin_product_path(product), method: :delete, data: { confirm: "Ben je zeker?" } %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <p>Er zijn momenteel geen producten, voeg een nieuw product toe</p>
+    <% end %>
+  </table>
+</section>

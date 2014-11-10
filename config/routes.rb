@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     end
 
     resources :treatments
+    resources :products
   end
 end

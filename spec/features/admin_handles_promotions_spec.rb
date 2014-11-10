@@ -88,6 +88,6 @@ feature 'Admin interacts with promotions' do
 
     click_link 'Verwijderen'
     expect(page).to have_css 'p', text: "De actie werd verwijderd"
-    expect(page).not_to have_css 'p', text: "promotion1"
+    expect(page).not_to have_css 'a', text: "promotion1"
   end
 end
