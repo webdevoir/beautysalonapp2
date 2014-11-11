@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Contact do
-  it { should validate_presence_of(:name) }
-  it { should validate_presence_of(:email) }
-  it { should validate_presence_of(:phone) }
-  it { should validate_presence_of(:message) }
+  it { should validate_presence_of(:name).with_message("naam is verplicht") }
+  it { should validate_presence_of(:email).with_message("email is verplicht") }
+  it { should validate_presence_of(:phone).with_message("telefoonnummer is verplicht") }
+  it { should validate_presence_of(:message).with_message("geef een gewenste behandeling") }
   it { should ensure_length_of(:message).is_at_most(500) }
 
   it "accepts properly formatted email addresses" do
