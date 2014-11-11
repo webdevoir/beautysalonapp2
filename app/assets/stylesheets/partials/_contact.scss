@@ -1,0 +1,37 @@
+section.contact {
+  form {
+    padding: 3em;
+    padding-top: 1em;
+    padding-left: 0;
+    @include span-columns(8);
+
+    .error {
+      color: darken(red, 20); 
+    }
+  }
+
+  aside {
+    @include span-columns(4);
+    @include omega();
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 3px solid $medium-gray;
+
+    h2 {
+      margin-bottom: em(5);
+      color: $medium-gray;
+    }
+
+    h3 {
+      margin-top: em(15);
+      margin-bottom: em(5);
+      color: $medium-gray;
+    }
+
+    a {
+      color: darken($base-accent-color, 10);
+    }
+  }
+}
+
