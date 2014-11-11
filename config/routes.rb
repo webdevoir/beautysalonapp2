@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   get 'signin' => "sessions#new"
   resource :session
+  resources :contacts, only: [:new, :create]
 
   resources :promotions, only: [:show]
   resources :products, only: [:index]
