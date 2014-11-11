@@ -10,10 +10,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="main" role="main">
+  <div class="main" role="main">
     <%= render "shared/header" %>
     <%= render "shared/messages" %>
     <%= yield %>
   </div>
+  <%= render "shared/footer" %>
 </body>
 </html>

@@ -1,4 +1,6 @@
-#main {
+// Sticky footer 
+//
+.main {
   min-height: 100%;
   height: auto !important;
   height: 100%;
@@ -14,6 +16,25 @@
     }
   }
 }
+
+html, body {
+ height: 100%;
+}
+
+
+.main:after {
+  content: "";
+  display: block;
+}
+
+.footer-2, .main:after {
+  height: 17em;
+
+  @include media($large-screen) {
+    height: 4em;
+  }
+}
+
 
 .signin {
  margin-top: em(20);
