@@ -28,7 +28,7 @@ describe Admin::ProductsController do
       end
 
       it "does not create a product" do
-        expect(Promotion.count).to eq(0)
+        expect(Product.count).to eq(0)
       end
 
       it "renders the new template" do
