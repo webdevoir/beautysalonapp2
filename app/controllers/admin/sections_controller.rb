@@ -44,6 +44,6 @@ class Admin::SectionsController < ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:title, :description)
+    params.require(:section).permit(:title, :description, :image)
   end
 end

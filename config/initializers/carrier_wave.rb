@@ -15,6 +15,7 @@ CarrierWave.configure do |config|
     PromotionImageUploader
     TreatmentImageUploader
     ProductImageUploader
+    SectionImageUploader
    
 
     # use different dirs when testing

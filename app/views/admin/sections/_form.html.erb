@@ -1,4 +1,4 @@
-<%= form_for [:admin, @section] do |f| %>
+<%= form_for [:admin, @section], html: { id: "section-form", multipart: true } do |f| %>
   <fieldset>
     <div>
       <%= f.label :title, "Titel" %>
@@ -7,6 +7,10 @@
     <div>
       <%= f.label :description, "Beschrijving" %>
       <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.label :image %>
+      <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
     </div>
     <% if @section.new_record? %>
       <%= f.button "Sectie Toevoegen" %>

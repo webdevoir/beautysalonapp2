@@ -14,6 +14,7 @@ feature 'Admin does CRUD operations on sections' do
 
     expect(page).to have_css 'p', text: section.title
     expect(page).to have_css 'p', text: section.description
+    expect(page).to have_xpath("//img[contains(@src,'#{File.basename(section.image.url)}')]") 
   end
 
   scenario 'admin sees success message when adding a valid product' do
