@@ -6,7 +6,7 @@
       </header>
       <%= image_tag treatment.image.url %>
       <p><%= treatment.summary %></p>
-      <p class="more_info"><%= link_to "Meer info", category_treatment_path(category_id: treatment.category_id, id: treatment) %></p>
+      <p class="more_info"><%= link_to "Meer info", behandeling_path(treatment) %></p>
       <button>Maak een afspraak</button>
     </div>
   <% end %>

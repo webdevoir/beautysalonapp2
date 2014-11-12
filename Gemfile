@@ -69,4 +69,5 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'simple_form'
+gem 'friendly_id', '~> 5.0.4'
 

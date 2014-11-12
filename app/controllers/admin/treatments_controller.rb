@@ -9,7 +9,7 @@ class Admin::TreatmentsController < ApplicationController
   end
 
   def show
-    @treatment = Treatment.find(params[:id])
+    @treatment = Treatment.friendly.find(params[:id])
   end
 
   def new
@@ -27,11 +27,11 @@ class Admin::TreatmentsController < ApplicationController
   end
 
   def edit
-    @treatment = Treatment.find(params[:id])
+    @treatment = Treatment.friendly.find(params[:id])
   end
 
   def update
-    @treatment = Treatment.find(params[:id])
+    @treatment = Treatment.friendly.find(params[:id])
     if @treatment.update_attributes(treatment_params)
       redirect_to admin_treatments_path, notice: "De behandeling werd aangepast"
     else
@@ -41,7 +41,7 @@ class Admin::TreatmentsController < ApplicationController
   end
 
   def destroy
-    treatment = Treatment.find(params[:id])
+    treatment = Treatment.friendly.find(params[:id])
     treatment.destroy
     redirect_to admin_treatments_path, notice: "De behandeling werd verwijderd"
   end

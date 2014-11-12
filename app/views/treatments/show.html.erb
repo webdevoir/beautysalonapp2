@@ -8,7 +8,9 @@
     <p class="tagline">Een perfecte huidanalyse voor een perfecte behandeling!</p>
   </header>
   <aside>
-    <%= image_tag @treatment.image.url %>
+    <% if @treatment.image.present? %>
+      <%= image_tag @treatment.image.url %>
+    <% end %>
   </aside>
   <div class="content">
     <p><%= @treatment.description %></p>
