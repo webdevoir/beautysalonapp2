@@ -96,4 +96,16 @@ feature 'Visitor visits homepage' do
     expect(page).to have_link manicure2.title
     expect(page).to have_link manicure3.title
   end
+
+  scenario 'visitor sees products' do
+    product1 = create(:product)
+    product2 = create(:product)
+    product3 = create(:product)
+
+    visit root_path
+
+    expect(page).to have_link product1.title
+    expect(page).to have_link product2.title
+    expect(page).to have_link product3.title
+  end
 end
