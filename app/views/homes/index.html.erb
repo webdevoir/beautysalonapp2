@@ -38,9 +38,11 @@
         <%= image_tag "environ-peeling-kuur.jpg", alt: "envirion peeling kuur" %>
         <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
         <ul class="fa-ul">
-          <li><i class="fa-li fa fa-check-square"></i><a href="#">Environ Discovery</a></li>
-          <li><i class="fa-li fa fa-check-square"></i><a href="#">Environ Express</a></li>
-          <li><i class="fa-li fa fa-check-square"></i><a href="#">Environ Peel</a><li>
+          <% @behandelingen.each do |behandeling| %>
+            <% if behandeling.category_id == 1 %>
+            <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
+            <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -50,9 +52,11 @@
         <%= image_tag "make-up-250x193.jpg", alt: "environ peeling kuur" %>
         <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
         <ul class="fa-ul">
-          <li><i class="fa-li fa fa-check-square"></i>Environ Discovery</li>
-          <li><i class="fa-li fa fa-check-square"></i>Environ Express</li>
-          <li><i class="fa-li fa fa-check-square"></i>Environ Peel<li>
+          <% @behandelingen.each do |behandeling| %>
+            <% if behandeling.category_id == 2 %>
+              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
+            <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -62,9 +66,11 @@
         <%= image_tag "manicure.jpg", alt: "environ peeling kuur" %>
         <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
         <ul class="fa-ul">
-          <li><i class="fa-li fa fa-check-square"></i>Environ Discovery</li>
-          <li><i class="fa-li fa fa-check-square"></i>Environ Express</li>
-          <li><i class="fa-li fa fa-check-square"></i>Environ Peel<li>
+          <% @behandelingen.each do |behandeling| %>
+            <% if behandeling.category_id == 3 %>
+              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
+            <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -76,9 +82,11 @@
         <%= image_tag "environ-peeling-kuur.jpg", alt: "environ peeling kuur" %>
         <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
         <ul class="fa-ul">
-          <li><i class="fa-li fa fa-check-square"></i><a href="#">Environ Discovery</a></li>
-          <li><i class="fa-li fa fa-check-square"></i><a href="#">Environ Express</a></li>
-          <li><i class="fa-li fa fa-check-square"></i><a href="#">Environ Peel</a><li>
+          <% @behandelingen.each do |behandeling| %>
+            <% if behandeling.category_id == 4 %>
+              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
+            <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
