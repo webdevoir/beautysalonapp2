@@ -11,7 +11,7 @@ feature 'Visitor visits treatments page' do
     treatment2.category = category2
     treatment2.save
 
-    visit category_treatments_path(category_id: category1.id) 
+    visit gelaatsverzorgingen_path(category_id: category1.id) 
     within(".item") { expect(page).to have_css 'h1', text: treatment1.title }
     within(".item") { expect(page).to_not have_css 'h1', text: treatment2.title }
     within(".item") { expect(page).to have_xpath("//img[contains(@src,'#{File.basename(treatment1.image.url)}')]") }

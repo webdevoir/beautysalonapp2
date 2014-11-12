@@ -5,7 +5,7 @@ feature 'Visitor visits products page' do
     product1 = create(:product)
     product2 = create(:product)
     
-    visit products_path
+    visit producten_path
 
     expect(page).to have_css 'h1', text: product1.title
     expect(page).to have_css 'h1', text: product2.title

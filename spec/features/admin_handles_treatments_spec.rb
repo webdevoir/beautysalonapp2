@@ -59,7 +59,7 @@ feature 'Admin interacts with treatments' do
   end
 
   scenario 'admin sees success message when editing a treatment' do
-    find("a[href='/admin/treatments/#{treatment.id}/edit']").click
+    find("a[href='/admin/treatments/#{(treatment.title).parameterize}/edit']").click
     find("input[@id='treatment_title']").set("new title")
     find("input[@id='treatment_tagline']").set("new tagline")
     find("textarea[@id='treatment_summary']").set("new summary")
@@ -72,7 +72,7 @@ feature 'Admin interacts with treatments' do
   end
 
   scenario 'admin sees error message when editing invalid treatment' do
-    find("a[href='/admin/treatments/#{treatment.id}/edit']").click
+    find("a[href='/admin/treatments/#{(treatment.title).parameterize}/edit']").click
     find("input[@id='treatment_title']").set("")
     find("input[@id='treatment_tagline']").set("new tagline")
     find("textarea[@id='treatment_summary']").set("new summary")
