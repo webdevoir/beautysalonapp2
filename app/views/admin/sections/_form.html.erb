@@ -1,0 +1,17 @@
+<%= form_for [:admin, @section] do |f| %>
+  <fieldset>
+    <div>
+      <%= f.label :title, "Titel" %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :description, "Beschrijving" %>
+      <%= f.text_area :description %>
+    </div>
+    <% if @section.new_record? %>
+      <%= f.button "Sectie Toevoegen" %>
+    <% else %>
+      <%= f.button "Sectie Aanpassen" %>
+    <% end %>
+  </fieldset>
+<% end %>

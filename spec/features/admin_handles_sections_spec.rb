@@ -12,7 +12,7 @@ feature 'Admin does CRUD operations on sections' do
   scenario 'admin clicks on section title and sees section details' do
     click_link section.title
 
-    expect(page).to have_css 'h1', text: section.title
+    expect(page).to have_css 'p', text: section.title
     expect(page).to have_css 'p', text: section.description
   end
 
