@@ -49,66 +49,6 @@ feature 'Visitor visits homepage' do
     expect(page).to have_css 'p.price', text: promotion.price
   end
 
-  scenario 'visitor sees treatments - gelaatsverzorgingen' do
-    gelaatsverzorging1 = create(:treatment, category_id: 1)
-    gelaatsverzorging2 = create(:treatment, category_id: 1)
-    gelaatsverzorging3 = create(:treatment, category_id: 1)
-
-    visit root_path
-
-    expect(page).to have_link gelaatsverzorging1.title
-    expect(page).to have_link gelaatsverzorging2.title
-    expect(page).to have_link gelaatsverzorging3.title
-  end
-
-  scenario 'visitor sees treatments - makeup' do
-    makeup1 = create(:treatment, category_id: 2)
-    makeup2 = create(:treatment, category_id: 2)
-    makeup3 = create(:treatment, category_id: 2)
-
-    visit root_path
-
-    expect(page).to have_link makeup1.title
-    expect(page).to have_link makeup2.title
-    expect(page).to have_link makeup3.title
-  end
-
-  scenario 'visitor sees treatments - lichaamsbehandelingen' do
-    lichaamsbehandeling1 = create(:treatment, category_id: 3)
-    lichaamsbehandeling2 = create(:treatment, category_id: 3)
-    lichaamsbehandeling3 = create(:treatment, category_id: 3)
-
-    visit root_path
-
-    expect(page).to have_link lichaamsbehandeling1.title
-    expect(page).to have_link lichaamsbehandeling2.title
-    expect(page).to have_link lichaamsbehandeling3.title
-  end
-
-  scenario 'visitor sees treatments - lichaamsbehandelingen' do
-    manicure1 = create(:treatment, category_id: 4)
-    manicure2 = create(:treatment, category_id: 4)
-    manicure3 = create(:treatment, category_id: 4)
-
-    visit root_path
-
-    expect(page).to have_link manicure1.title
-    expect(page).to have_link manicure2.title
-    expect(page).to have_link manicure3.title
-  end
-
-  scenario 'visitor sees products' do
-    product1 = create(:product)
-    product2 = create(:product)
-    product3 = create(:product)
-
-    visit root_path
-
-    expect(page).to have_link product1.title
-    expect(page).to have_link product2.title
-    expect(page).to have_link product3.title
-  end
-
   scenario 'visitor views section' do
     section = create(:section, category_id: 1)
     behandeling = create(:treatment, category_id: 1)
