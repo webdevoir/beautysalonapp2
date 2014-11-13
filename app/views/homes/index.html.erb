@@ -40,9 +40,15 @@
         <%= image_tag section.image.url %>
         <p><%= section.description %></p>
         <ul class="fa-ul">
-          <% @behandelingen.each do |behandeling| %>
-            <% if behandeling.category_id == section.category_id %>
-            <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
+          <% if section.category_id != 5 %>
+            <% @behandelingen.each do |behandeling| %>
+              <% if behandeling.category_id == section.category_id %>
+              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% @products.each do |product| %>
+              <li><%= link_to product.title, producten_path %></li>
             <% end %>
           <% end %>
         </ul>
