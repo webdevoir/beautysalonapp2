@@ -20,3 +20,6 @@
 
 # Ignore access keys
 /config/secrets.yml
+
+# Ignore image uploads
+/public/uploads
