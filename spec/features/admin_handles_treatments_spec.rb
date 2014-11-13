@@ -34,7 +34,7 @@ feature 'Admin interacts with treatments' do
     Category.create(name: "lichaamsbehandelingen")
 
     find("input[@value='Behandeling Toevoegen']").click
-    select "gelaatsverzorgingen", from: "Category"
+    select "gelaatsverzorgingen", from: "Categorie"
     fill_in 'Titel', with: "some title"
     fill_in 'Tagline', with: "some tagline"
     fill_in 'Samenvatting', with: "some summary"

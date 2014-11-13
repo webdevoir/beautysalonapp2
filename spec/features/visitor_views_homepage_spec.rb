@@ -108,4 +108,16 @@ feature 'Visitor visits homepage' do
     expect(page).to have_link product2.title
     expect(page).to have_link product3.title
   end
+
+  scenario 'visitor views section' do
+    section = create(:section, category_id: 1)
+    behandeling = create(:treatment, category_id: 1)
+
+    visit root_path
+
+    expect(page).to have_css 'h2', text: section.title
+    expect(page).to have_xpath("//img[contains(@src,'#{File.basename(section.image.url)}')]")
+    expect(page).to have_css 'p', text: section.description
+    expect(page).to have_css 'a', text: behandeling.title
+  end
 end

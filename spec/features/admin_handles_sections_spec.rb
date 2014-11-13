@@ -10,15 +10,24 @@ feature 'Admin does CRUD operations on sections' do
   end
 
   scenario 'admin clicks on section title and sees section details' do
+    category = Category.create(name: "gelaatsverzorgingen")
+    section.category_id = category.id
+    section.save
+
     click_link section.title
 
+    expect(page).to have_css 'p', text: section.category.name
     expect(page).to have_css 'p', text: section.title
     expect(page).to have_css 'p', text: section.description
     expect(page).to have_xpath("//img[contains(@src,'#{File.basename(section.image.url)}')]") 
   end
 
   scenario 'admin sees success message when adding a valid product' do
+    Category.create(name: "gelaatsverzorgingen")
+    Category.create(name: "lichaamsbehandelingen")
+
     find("input[@value='Sectie Toevoegen']").click
+    select "gelaatsverzorgingen", from: "Categorie"
     fill_in 'Titel', with: "some title"
     fill_in 'Beschrijving', with: "some description"
     click_button 'Sectie Toevoegen'

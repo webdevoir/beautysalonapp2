@@ -31,77 +31,25 @@
   </div>
 </div>
 </div>
+  <% @sections.in_groups_of(3, false) do |sections| %>
   <div class="behandelingen">
+    <% sections.each do |section| %>
     <div data-mh="row2" class="behandeling">
       <div class="behandelingen-inner">
-        <h2>Gelaatsverzorgingen</h2>
-        <%= image_tag "environ-peeling-kuur.jpg", alt: "envirion peeling kuur" %>
-        <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
+        <h2><%= section.title %></h2>
+        <%= image_tag section.image.url %>
+        <p><%= section.description %></p>
         <ul class="fa-ul">
           <% @behandelingen.each do |behandeling| %>
-            <% if behandeling.category_id == 1 %>
+            <% if behandeling.category_id == section.category_id %>
             <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
             <% end %>
           <% end %>
         </ul>
       </div>
     </div>
-    <div data-mh="row2" class="behandeling">
-      <div class="behandelingen-inner">
-        <h2>Make-Up</h2>
-        <%= image_tag "make-up-250x193.jpg", alt: "environ peeling kuur" %>
-        <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
-        <ul class="fa-ul">
-          <% @behandelingen.each do |behandeling| %>
-            <% if behandeling.category_id == 2 %>
-              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div data-mh="row2" class="behandeling">
-      <div class="behandelingen-inner">
-        <h2>Lichaamsbehandelingen</h2>
-        <%= image_tag "manicure.jpg", alt: "environ peeling kuur" %>
-        <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
-        <ul class="fa-ul">
-          <% @behandelingen.each do |behandeling| %>
-            <% if behandeling.category_id == 3 %>
-              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+    <% end %>
   </div>
-  <div class="behandelingen">
-    <div data-mh="row3" class="behandeling">
-      <div class="behandelingen-inner">
-        <h2>Manicure-Pedicure-Epilatie</h2>
-        <%= image_tag "environ-peeling-kuur.jpg", alt: "environ peeling kuur" %>
-        <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
-        <ul class="fa-ul">
-          <% @behandelingen.each do |behandeling| %>
-            <% if behandeling.category_id == 4 %>
-              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div data-mh="row3" class="behandeling">
-      <div class="behandelingen-inner">
-        <h2>Producten</h2>
-        <%= image_tag "make-up-250x193.jpg", alt: "environ peeling kuur" %>
-        <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
-        <ul class="fa-ul">
-          <% @products.each do |product| %>
-            <li><i class="fa-li fa fa-check-square"></i><%= link_to product.title, producten_path %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </section>
 
