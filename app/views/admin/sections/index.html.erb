@@ -1,11 +1,13 @@
 <section class="dashboard">
   <%= button_to "Sectie Toevoegen", new_admin_section_path, method: "get" %>
-  <table class="table-borders">
+  <table id="sections" class="table-borders">
+    <tbody data-update-url="<%= sort_admin_sections_url %>">
     <% @sections.each do |section| %>
-      <tr>
+      <%= content_tag_for :tr, section do %>
         <td><%= link_to section.title, admin_section_path(section) %></td>
         <td><%= link_to "Aanpassen", edit_admin_section_path(section) %>&nbsp;&nbsp;<%= link_to 'Verwijderen', admin_section_path(section), method: :delete, data: { confirm: "Ben je zeker?" } %></td>
-      </tr>
+        <% end %>
     <% end %>
+    </tbody>
   </table>
 </section>

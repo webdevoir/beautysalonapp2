@@ -1,6 +1,6 @@
 class Admin::SectionsController < ApplicationController
   def index
-    @sections = Section.all
+    @sections = Section.order("position")
   end
 
   def show
@@ -41,9 +41,16 @@ class Admin::SectionsController < ApplicationController
     redirect_to admin_sections_path, notice: "De sectie werd verwijderd"
   end
 
+  def sort
+    params[:section].each_with_index do |id, index|
+     Section.where(id: id).update_all({position: index+1})
+    end
+    render nothing: true
+  end
+
   private
 
   def section_params
-    params.require(:section).permit(:title, :description, :image, :category_id)
+    params.require(:section).permit(:position, :title, :description, :image, :category_id)
   end
 end
