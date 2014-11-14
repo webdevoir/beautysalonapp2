@@ -212,6 +212,9 @@ article {
     @include omega();
     float: right;
     margin-top: em(20);
+    img {
+      margin-left: em(20);
+    }
   }
 }
 
