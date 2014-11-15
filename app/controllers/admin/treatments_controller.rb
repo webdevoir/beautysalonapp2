@@ -50,6 +50,6 @@ class Admin::TreatmentsController < ApplicationController
   private
 
   def treatment_params
-    params.required(:treatment).permit(:title, :tagline, :summary, :description, :image, :price, :category_id)
+    params.required(:treatment).permit(:title, :tagline, :summary, :description, :image, :remove_image, :price, :category_id)
   end
 end
