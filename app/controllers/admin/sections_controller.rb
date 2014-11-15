@@ -42,6 +42,7 @@ class Admin::SectionsController < ApplicationController
   end
 
   def sort
+    raise Error 
     params[:section].each_with_index do |id, index|
      Section.where(id: id).update_all({position: index+1})
     end
@@ -51,6 +52,6 @@ class Admin::SectionsController < ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:position, :title, :description, :image, :category_id)
+    params.require(:section).permit(:title, :description, :image, :category_id)
   end
 end
