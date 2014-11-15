@@ -10,7 +10,16 @@ section.dashboard {
   .panel {
     margin-top: em(40);
     padding: 3em;
+
+    i {
+      color: #333;
+    }
   }
+  
+  ul {
+    @extend %default-ul;
+  }
+
 
   nav {
     margin-top: em(20);
@@ -26,7 +35,7 @@ section.dashboard {
     input[type="submit"]{
       margin-top: em(20);
     }
-    input[type="text"].year, input[type="text"].series {
+    input[type="text"].price {
       width: em(100);
     }
 
@@ -85,13 +94,6 @@ section.dashboard {
     .section {
       margin-top: em(40);
       margin-bottom: em(40);
-    }
-
-    i {
-      color: $base-accent-color;
-      &.right {
-        margin-left: em(10);
-      }
     }
   }
 }

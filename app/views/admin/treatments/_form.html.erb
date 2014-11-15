@@ -18,15 +18,18 @@
     </div>
     <div>
       <%= f.label :description, "Beschrijving" %>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, size: "20x10" %>
     </div>
     <div>
+      <% if @treatment.image.present? %>
+        <%= image_tag @treatment.image.url %>
+      <% end %>
       <%= f.label :image %>
       <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
     </div>
     <div>
       <%= f.label :price, "Prijs" %>
-      <%= f.text_field :price %>
+      <%= f.text_field :price, maxlength: 4, class: "price" %>
     </div>
     <% if @treatment.new_record? %>
       <%= f.button "Behandeling Toevoegen" %>
@@ -35,3 +38,12 @@
     <% end %>
   </fieldset>
 <% end %>
+
+<script>
+  $(function() {
+    $('#treatment_description').editable({
+      inlineMode: false,
+      buttons: ['bold', 'italic', 'insertUnorderedList']
+    })
+  });
+</script>

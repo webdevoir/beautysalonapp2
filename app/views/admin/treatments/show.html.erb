@@ -15,7 +15,7 @@
     </div>
     <div class="section">
       <h2>Beschrijving</h2>
-      <p><%= @treatment.description %></p>
+      <p><%= sanitize @treatment.description, tags: %w(strong i ul li) %></p>
     </div>
     <div class="section">
       <h2>Afbeelding</h2>
