@@ -1,13 +1,17 @@
 class Admin::PromotionsController < ApplicationController
+  add_breadcrumb "dashboard", :admin_path
+  add_breadcrumb "acties", :admin_promotions_path
   def index
     @promotions = Promotion.all
   end
 
   def show
     @promotion = Promotion.find(params[:id])
+    add_breadcrumb @promotion.title
   end
 
   def new
+    add_breadcrumb "actie toevoegen"
     @promotion = Promotion.new
   end
 
@@ -22,6 +26,7 @@ class Admin::PromotionsController < ApplicationController
   end
 
   def edit
+    add_breadcrumb "actie aanpassen"
     @promotion = Promotion.find(params[:id])
   end
 

@@ -1,5 +1,10 @@
 <section class="dashboard">
-<%= button_to "Actie Toevoegen", new_admin_promotion_path, method: "get" %>
+  <div class="breadcrumb">
+    <%= render_breadcrumbs :separator => " " %>
+  </div>
+  <div class="add">
+    <%= button_to "Actie Toevoegen", new_admin_promotion_path, method: "get" %>
+  </div>
 <table class="table-borders">
   <% if @promotions.count != 0 %>
     <% @promotions.each do |promotion| %>

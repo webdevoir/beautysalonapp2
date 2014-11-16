@@ -74,4 +74,4 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'simple_form'
 gem 'friendly_id', '~> 5.0.4'
-
+gem 'breadcrumbs_on_rails', '~> 2.3.0'

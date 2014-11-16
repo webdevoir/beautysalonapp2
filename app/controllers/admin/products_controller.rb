@@ -1,13 +1,17 @@
 class Admin::ProductsController < ApplicationController
+  add_breadcrumb "dashboard", :admin_path
+  add_breadcrumb "producten", :admin_products_path
   def index
     @products = Product.all
   end
 
   def show
     @product = Product.find(params[:id])
+    add_breadcrumb @product.title
   end
 
   def new
+    add_breadcrumb "product toevoegen"
     @product = Product.new
   end
 
@@ -22,6 +26,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
+    add_breadcrumb "product aanpassen"
     @product = Product.find(params[:id])  
   end
 

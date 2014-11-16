@@ -1,4 +1,6 @@
 class Admin::TreatmentsController < ApplicationController
+  add_breadcrumb "dashboard", :admin_path
+  add_breadcrumb "behandelingen", :admin_treatments_path
   def index
     if (params.has_key?(:treatment) && (params[:treatment][:category] != ""))
       @treatments = Treatment.filter(params[:treatment][:category])
@@ -10,9 +12,11 @@ class Admin::TreatmentsController < ApplicationController
 
   def show
     @treatment = Treatment.friendly.find(params[:id])
+    add_breadcrumb @treatment.category.name
   end
 
   def new
+    add_breadcrumb "behandeling toevoegen"
     @treatment = Treatment.new
   end
 
@@ -27,6 +31,7 @@ class Admin::TreatmentsController < ApplicationController
   end
 
   def edit
+    add_breadcrumb "behandeling aanpassen"
     @treatment = Treatment.friendly.find(params[:id])
   end
 

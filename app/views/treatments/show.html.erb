@@ -1,6 +1,6 @@
 <article class="behandeling">
   <div class="breadcrumb">
-    <a href="/gelaatsverzorgingen.html">Gelaatsverzorgingen</a>
+    <%= link_to @treatment.category.name, behandelingen_path(@treatment.category_id) %>
     <a href="javascript:void(0)"><%= @treatment.title %></a>
   </div>
   <header>
@@ -17,7 +17,7 @@
     <% if @treatment.price.present? %>
       <p class="price"><strong>Prijs:</strong> <%= @treatment.price %></p>
     <% end %>
-    <button>Maak een Afspraak</button>
+    <%= button_to "Maak een Afspraak", new_contact_path, method: "get" %>
   </div>
 </article>
 

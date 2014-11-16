@@ -1,4 +1,5 @@
 <section class="listing">
+  <h1><%= @category.name.titleize %></h1>
   <% @treatments.each do |treatment| %>
     <div class="item">
       <header>
@@ -9,7 +10,7 @@
       <% end %>
       <p><%= treatment.summary %></p>
       <p class="more_info"><%= link_to "Meer info", behandeling_path(treatment) %></p>
-      <button>Maak een afspraak</button>
+      <%= button_to "Maak een afspraak", new_contact_path, method: "get" %>
     </div>
   <% end %>
 </section>

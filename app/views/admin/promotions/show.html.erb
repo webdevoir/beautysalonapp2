@@ -1,5 +1,8 @@
 <section class="dashboard">
   <div class="panel">
+    <div class="breadcrumb">
+      <%= render_breadcrumbs :separator => " " %>
+    </div>
     <h1><%= @promotion.title %></h1>
     <div class="section">
       <h2>Tagline</h2>

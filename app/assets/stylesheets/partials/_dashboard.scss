@@ -8,8 +8,30 @@ section.dashboard {
   }
 
   .panel {
+    @include clearfix;
+    background: lighten($base-border-color, 10);
+    border: 1px solid $base-border-color;
+    margin: 0 0 ($base-line-height / 2) 0;
+    padding: $base-line-height;
     margin-top: em(40);
     padding: 3em;
+
+    h1 {
+      clear: left;
+      margin-bottom: em(20);
+      color: $dark-gray;
+    }
+
+    h2 {
+      font-size: $base-font-size;
+      margin-bottom: em(5);
+    }
+
+
+    .section {
+      margin-top: em(40);
+      margin-bottom: em(40);
+    }
 
     i {
       color: #333;
@@ -28,6 +50,19 @@ section.dashboard {
       line-height: 2em;
     }
 
+  }
+
+  .breadcrumb {
+    float: left;
+    clear: both;
+  }
+
+  .add {
+    clear: both;
+  }
+
+  form.filter {
+    clear: both;
   }
 
   form {
@@ -70,30 +105,6 @@ section.dashboard {
   .content {
     @include media($medium-screen) {
       @include span-columns(8);
-    }
-  }
-
-  .panel {
-    @include clearfix;
-    background: lighten($base-border-color, 10);
-    border: 1px solid $base-border-color;
-    margin: 0 0 ($base-line-height / 2) 0;
-    padding: $base-line-height;
-
-    h1 {
-      margin-bottom: em(20);
-      color: $dark-gray;
-    }
-
-    h2 {
-      font-size: $base-font-size;
-      margin-bottom: em(5);
-    }
-
-
-    .section {
-      margin-top: em(40);
-      margin-bottom: em(40);
     }
   }
 }

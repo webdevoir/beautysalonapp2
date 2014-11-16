@@ -1,14 +1,19 @@
 class Admin::SectionsController < ApplicationController
+  add_breadcrumb "dashboard", :admin_path
+  add_breadcrumb "secties", :admin_sections_path
+
   def index
     @sections = Section.all
   end
 
   def show
     @section = Section.find(params[:id])
+    add_breadcrumb @section.title
   end
 
   def new
     @section = Section.new
+    add_breadcrumb "sectie toevoegen" 
   end
 
   def create
@@ -23,6 +28,7 @@ class Admin::SectionsController < ApplicationController
 
   def edit
     @section = Section.find(params[:id])
+    add_breadcrumb "sectie aanpassen" 
   end
 
   def update

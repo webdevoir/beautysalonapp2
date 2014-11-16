@@ -1,4 +1,7 @@
 section.listing {
+  h1 {
+    font-family: $sans-serif;
+  }
   img {
     float: right;
     margin-left: em(20);
@@ -19,7 +22,7 @@ section.listing {
       font-size: 1.953em;
       line-height: 1.1;
       margin: 0 0 (1.953em / 2);
-      color: darken($base-accent-color, 5);
+      color: $medium-gray; 
 
     }
 
