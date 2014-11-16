@@ -1,6 +1,6 @@
 <article class="actie">
   <div class="breadcrumb">
-    <a href="/gelaatsverzorgingen.html">Acties</a>
+    <a href="javascript:void(0)">Acties</a>
     <a href="javascript:void(0)">Environ Peeling Kuur</a>
   </div>
   <header>
@@ -13,7 +13,7 @@
   <div class="content">
     <p><%= @promotion.description %></p>
     <p class="price">Prijs: <%= number_to_currency(@promotion.price, :unit => "€") %></p>
-    <button>Maak een Afspraak</button>
+    <%= button_to "Maak een Afspraak", new_contact_path, method: "get" %>
   </div>
 </article>
 
