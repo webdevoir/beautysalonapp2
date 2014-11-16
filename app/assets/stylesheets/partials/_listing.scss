@@ -22,7 +22,7 @@ section.listing {
       font-size: 1.953em;
       line-height: 1.1;
       margin: 0 0 (1.953em / 2);
-      color: $medium-gray; 
+      color: darken($medium-gray, 20); 
 
     }
 
@@ -35,7 +35,8 @@ section.listing {
   }
 
   p.more_info a {
-    border-bottom: 2px solid $pink;
+    border-bottom: 2px solid $medium-gray;
+    color: darken($medium-gray, 20);
   }
 
   p {
