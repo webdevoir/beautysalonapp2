@@ -4,6 +4,6 @@ class HomesController < ApplicationController
     @promotions = Promotion.all.where(visible: true)
     @behandelingen = Treatment.all
     @products = Product.all
-    @sections = Section.all
+    @sections = Section.all.order(:position)
   end
 end

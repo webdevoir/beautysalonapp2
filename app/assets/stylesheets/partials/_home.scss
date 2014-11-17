@@ -71,6 +71,7 @@ section.home {
         }
       }
     }
+    .button_to { float: right; }
   }
 }
 
@@ -155,6 +156,16 @@ section.home {
       color: $base-font-color;
       margin-top: em(20);
       margin-bottom: em(20);
+    }
+
+    .fa-ul {
+      margin-left: 0;
+      li { line-height: 2em; }
+      a {
+        color: darken($base-accent-color, 20);; 
+        text-decoration: underline;
+        font-family: $serif;
+      }
     }
    }
  }

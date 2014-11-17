@@ -155,6 +155,15 @@ section {
   }
 }
 
+// icons
+
+i {
+  &.left {
+    margin-right: em(10);
+  }
+}
+
+
 // breadcrumbs
 
 .breadcrumb { 

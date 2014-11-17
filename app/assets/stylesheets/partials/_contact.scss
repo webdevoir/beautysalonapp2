@@ -36,6 +36,10 @@ section.contact {
     a {
       color: darken($base-accent-color, 10);
     }
+    
+    i {
+      color: $base-accent-color;
+    }
   }
 }
 
