@@ -6,7 +6,7 @@
     </div>
     <div>
       <%= f.label :description, "Beschrijving" %>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, size: "20x10" %>
     </div>
     <div>
       <% if @product.image.present? %>
@@ -25,3 +25,12 @@
     <% end %>
   </fieldset>
 <% end %>
+
+<script>
+  $(function() {
+    $('#product_description').editable({
+      inlineMode: false,
+      buttons: ['bold', 'italic', 'insertUnorderedList']
+    })
+  });
+</script>
