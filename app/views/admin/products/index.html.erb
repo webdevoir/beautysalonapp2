@@ -6,6 +6,7 @@
     <%= button_to "Product Toevoegen", new_admin_product_path, method: "get" %>
 </div>
   <table class="table-borders">
+    <tbody>
     <% if @products.count != 0 %>
       <% @products.each do |product| %>
         <tr>
@@ -14,7 +15,8 @@
         </tr>
       <% end %>
     <% else %>
-      <p>Er zijn momenteel geen producten, voeg een nieuw product toe</p>
+      <p class="no-items">Er zijn momenteel geen producten, voeg een nieuw product toe</p>
     <% end %>
+    </tbody>
   </table>
 </section>

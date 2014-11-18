@@ -8,6 +8,7 @@
   <% end %>
   <%= button_to "Behandeling Toevoegen", new_admin_treatment_path, method: "get" %>
   <table class="table-borders">
+    <tbody>
     <% if @treatments.count != 0 %>
       <% @treatments.each do |treatment| %>
         <tr>
@@ -17,7 +18,8 @@
         </tr>
       <% end %>
     <% else %>
-      <p>Er zijn momenteel geen behandelingen, voeg een nieuwe behandeling toe</p>
+      <p class="no-items">Er zijn momenteel geen behandelingen, voeg een nieuwe behandeling toe</p>
     <% end %>
+    </tbody>
   </table>
 </section>

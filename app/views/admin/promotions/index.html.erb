@@ -6,6 +6,7 @@
     <%= button_to "Actie Toevoegen", new_admin_promotion_path, method: "get" %>
   </div>
 <table class="table-borders">
+  <tbody>
   <% if @promotions.count != 0 %>
     <% @promotions.each do |promotion| %>
       <tr>
@@ -16,8 +17,9 @@
       </tr>
     <% end %>
   <% else %>
-    <p>Er zijn momenteel geen acties, voeg een nieuwe actie toe</p>
+    <p class="no-items">Er zijn momenteel geen acties, voeg een nieuwe actie toe</p>
   <% end %>
+  </tbody>
 </table>
 </section>
 
