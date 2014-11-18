@@ -5,7 +5,7 @@
   </div>
   <header>
     <h1><%= @treatment.title %></h1>
-    <p class="tagline">Een perfecte huidanalyse voor een perfecte behandeling!</p>
+    <p class="tagline"><%= @treatment.tagline %></p>
   </header>
   <aside>
     <% if @treatment.image.present? %>
@@ -13,7 +13,7 @@
     <% end %>
   </aside>
   <div class="content">
-    <p><%= @treatment.description %></p>
+    <p><%= sanitize @treatment.description, tags: %w(strong i ul li) %></p>
     <% if @treatment.price.present? %>
       <p class="price"><strong>Prijs:</strong> <%= @treatment.price %></p>
     <% end %>
