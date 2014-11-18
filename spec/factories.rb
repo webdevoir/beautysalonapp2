@@ -10,7 +10,7 @@ FactoryGirl.define do
   factory :treatment do
     title { Faker::Lorem.words(5).join(" ") }
     tagline { Faker::Lorem.words(5).join(" ") }
-    summary { Faker::Lorem.paragraph(1) }
+    summary { Faker::Lorem.words(10).join(" ") }
     description { Faker::Lorem.paragraph(2) }
     image Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/fixtures/treatments/gelaatsverzorging.jpg')))
     price 40.16
