@@ -33,3 +33,12 @@
     <% end %>
   </fieldset>
 <% end %>
+
+<script>
+  $(function() {
+    $('#promotion_description').editable({
+      inlineMode: false,
+      buttons: ['bold', 'italic', 'insertUnorderedList', 'html']
+    })
+  });
+</script>
