@@ -30,7 +30,7 @@ FactoryGirl.define do
 
   factory :section do
     title { Faker::Lorem.words(5).join(" ") }
-    description { Faker::Lorem.paragraph(2) }
+    description { Faker::Lorem.words(10).join(" ") }
     image Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/fixtures/sections/closed-eye.jpg')))
   end
 end
