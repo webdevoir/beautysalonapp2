@@ -1,7 +1,7 @@
 class TreatmentsController < ApplicationController
   def index
-    @category = Category.friendly.find(params[:category_id])
-    @treatments = Treatment.all.where(category_id: params[:category_id])
+    @category = Category.find_by_name(params[:category])
+    @treatments = Treatment.all.where(category_id: @category.id)
   end
 
   def show

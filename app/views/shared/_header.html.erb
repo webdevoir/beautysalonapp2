@@ -7,10 +7,10 @@
     <div class="nav">
       <ul id="navigation-menu">
         <li class="nav-link"><a href="/">Home</a></li>
-        <li class="nav-link"><%= link_to "Gelaatsverzorgingen", gelaatsverzorgingen_path(1) %></li>
-        <li class="nav-link"><%= link_to "Make-Up", makeups_path(2) %></li>
-        <li class="nav-link"><%= link_to "Lichaamsbehandelingen", lichaamsbehandelingen_path(3) %></li>
-        <li class="nav-link"><%= link_to "Manicure - Pedicure - Epilatie", manicures_path(4) %></li>
+        <li class="nav-link"><%= link_to "Gelaatsverzorging", category_path("gelaatsverzorging") %></li>
+        <li class="nav-link"><%= link_to "Make-Up", category_path("make-up") %></li>
+        <li class="nav-link"><%= link_to "Lichaamsbehandeling", category_path("lichaamsbehandeling") %></li>
+        <li class="nav-link"><%= link_to "Manicure - Pedicure - Epilatie", category_path("manicure-pedicure-epilatie") %></li>
         <li class="nav-link"><%= link_to "Producten", producten_path %></li>
         <li class="nav-link"><%= link_to "Contact", new_contact_path %></li>
       </ul>
