@@ -1,0 +1,7 @@
+section.session {
+  @include outer-container;
+  form {
+    @include span-columns(6);
+    margin-top: em(20);
+  }
+}
