@@ -1,5 +1,5 @@
 <section class="home">
-  <div data-mh="row1" class="hero">
+  <div class="hero block">
 	<div class="hero-inner">
 		<div class="hero-copy">
 			<h1>Schoonheidssalon Anniek Lambrecht</h1>
@@ -10,7 +10,7 @@
     <%= button_to "Maak een Afspraak", new_contact_path, method: "get" %>
 	</div>
 </div>
-<div data-mh="row1" class="acties">
+<div class="acties block">
   <div class="acties-inner">
     <h2>Acties</h2>
     <div class="actie">
@@ -34,7 +34,7 @@
   <% @sections.in_groups_of(3, false) do |sections| %>
   <div class="behandelingen">
     <% sections.each do |section| %>
-    <div data-mh="behandeling" class="behandeling">
+    <div class="behandeling">
       <div class="behandelingen-inner">
         <h2><%= section.title %></h2>
         <%= image_tag section.image.url %>
@@ -58,3 +58,11 @@
   </div>
   <% end %>
 </section>
+
+<script>
+$(document).ready(function () {
+  $('.block').matchHeight();
+  $('.behandeling').matchHeight();
+});
+</script>
+
