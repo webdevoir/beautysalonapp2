@@ -152,7 +152,7 @@ section.home {
     }
 
     p {
-      font-family: $serif;
+      font-family: $sans-serif;
       color: $base-font-color;
       margin-top: em(20);
       margin-bottom: em(20);
@@ -164,7 +164,7 @@ section.home {
       a {
         color: darken($base-accent-color, 20);; 
         text-decoration: underline;
-        font-family: $serif;
+        font-family: $sans-serif;
       }
     }
    }
