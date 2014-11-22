@@ -15,7 +15,7 @@
   <div class="content">
     <p><%= sanitize @treatment.description, tags: %w(strong i ul li) %></p>
     <% if @treatment.price.present? %>
-      <p class="price"><strong>Prijs:</strong> <%= @treatment.price %></p>
+      <p class="price"><strong>Prijs:</strong> &euro; <%= sprintf("%g", @treatment.price) %></p>
     <% end %>
     <%= button_to "Maak een Afspraak", new_contact_path, method: "get" %>
   </div>
