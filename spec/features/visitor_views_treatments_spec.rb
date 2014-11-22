@@ -21,6 +21,6 @@ feature 'Visitor visits treatments page' do
     within(".behandeling") { expect(page).to have_css 'h1', text: treatment1.title }
     within(".behandeling") { expect(page).to have_xpath("//img[contains(@src,'#{File.basename(treatment1.image.url)}')]") }
     within(".content") { expect(page).to have_css 'p', text: treatment1.description }
-    within(".content") { expect(page).to have_css 'p.price', text: "Prijs: #{treatment1.price}" }
+    within(".content") { expect(page).to have_content "#{treatment1.price}" }
   end
 end
