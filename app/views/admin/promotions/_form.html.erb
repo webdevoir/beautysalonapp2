@@ -15,7 +15,6 @@
     <div>
       <% if @promotion.image.present? %>
         <%= image_tag @promotion.image.url %>
-        <p>
         <%= f.check_box :remove_image %>
         verwijder afbeelding</p>
       <% end %>

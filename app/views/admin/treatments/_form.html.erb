@@ -23,7 +23,6 @@
     <div>
       <% if @treatment.image.present? %>
         <%= image_tag @treatment.image.url %>
-        <p>
         <%= f.check_box :remove_image %>
         verwijder afbeelding</p>
       <% end %>
