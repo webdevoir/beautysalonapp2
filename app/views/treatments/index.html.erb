@@ -3,7 +3,11 @@
   <% @treatments.each do |treatment| %>
     <div class="item">
       <header>
-        <h1><%= treatment.title %></h1>
+        <h1><%= treatment.title %>
+          <% if treatment.price.present? %>
+            &euro; <%= sprintf("%g", treatment.price) %>
+          <% end %>
+        </h1>
       </header>
       <% if treatment.image.present? %>
         <%= image_tag treatment.image.url %>
