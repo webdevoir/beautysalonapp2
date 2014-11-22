@@ -32,6 +32,10 @@ section.dashboard {
     .section {
       margin-top: em(40);
       margin-bottom: em(40);
+
+      ul {
+        @extend %default-ul;
+      }
     }
 
     i {
@@ -39,9 +43,6 @@ section.dashboard {
     }
   }
   
-  ul {
-    @extend %default-ul;
-  }
 
 
   nav {
@@ -53,10 +54,8 @@ section.dashboard {
 
   }
 
-  .breadcrumb {
-    // float: left;
-    clear: both;
-    @include span-columns(12);
+  .breadcrumbs {
+    margin-bottom: em(20);
   }
 
   .add {

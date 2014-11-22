@@ -5,4 +5,3 @@ module LayoutsHelper
     self.output_buffer = ActionView::OutputBuffer.new(output)
   end
 end
-
