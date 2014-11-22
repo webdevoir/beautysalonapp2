@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
   add_breadcrumb "dashboard", :admin_path
   add_breadcrumb "producten", :admin_products_path
   def index
-    @products = Product.all
+    @products = Product.all.order(:id)
   end
 
   def show

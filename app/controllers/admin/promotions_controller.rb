@@ -2,7 +2,7 @@ class Admin::PromotionsController < ApplicationController
   add_breadcrumb "dashboard", :admin_path
   add_breadcrumb "acties", :admin_promotions_path
   def index
-    @promotions = Promotion.all
+    @promotions = Promotion.all.order(:id)
   end
 
   def show
