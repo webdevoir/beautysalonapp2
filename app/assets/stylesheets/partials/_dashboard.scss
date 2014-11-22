@@ -2,7 +2,6 @@ section.dashboard {
 
   @include outer-container;
 
-
   a {
     color: $dark-gray;
   }
@@ -55,20 +54,19 @@ section.dashboard {
   }
 
   .breadcrumb {
-    float: left;
+    // float: left;
     clear: both;
+    @include span-columns(12);
   }
 
   .add {
     clear: both;
   }
 
-  form.filter {
-    clear: both;
+  .filter {
+    @include span-columns(12);
   }
-
   form {
-    @include span-columns(8);
     input[type="submit"]{
       margin-top: em(20);
     }
