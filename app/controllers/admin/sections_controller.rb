@@ -50,6 +50,6 @@ class Admin::SectionsController < ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:title, :description, :image, :category_id)
+    params.require(:section).permit(:title, :description, :image, :remove_image, :category_id)
   end
 end

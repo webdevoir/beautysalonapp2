@@ -13,6 +13,11 @@
       <%= f.text_area :description %>
     </div>
     <div>
+      <% if @section.image.present? %>
+        <%= image_tag @section.image.url %>
+        <%= f.check_box :remove_image %>
+        verwijder afbeelding
+      <% end %>
       <%= f.label :image %>
       <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
     </div>
