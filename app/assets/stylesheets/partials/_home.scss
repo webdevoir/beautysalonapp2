@@ -9,6 +9,10 @@ section.home {
   $hero-color: transparentize(white, 0.3);
   background-color: lighten($pink, 15);
   border-radius: 5px;
+  margin-bottom: em(40);
+  @include media($medium-screen) {
+    margin-bottom: 0;
+  }
 
   .hero-logo img {
     height: 3em;
@@ -16,10 +20,12 @@ section.home {
   }
 
   .hero-image {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: em(20);
     @include media($large-screen) {
       float: left;
       margin-right: em(20);
-      margin-bottom: em(20);
     }
     border-radius: 5px;
   }
@@ -34,10 +40,6 @@ section.home {
     padding: 3em;
     margin: auto;
     color: $hero-color;
-    
-    p.center { 
-      text-align: center;
-    }
 
     button {
       @include button(simple, $base-background-color);
@@ -71,7 +73,9 @@ section.home {
         }
       }
     }
-    .button_to { float: right; }
+    @include media($medium-screen) {
+      .button_to { float: right; }
+    }
   }
 }
 
@@ -136,6 +140,11 @@ section.home {
     padding: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
+    margin-bottom: em(40);
+    @include media($medium-screen) {
+      margin-bottom: 0;
+    }
+
 
     h2 {
       font-size: $base-font-size * 1.3;
