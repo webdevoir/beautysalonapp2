@@ -1,22 +1,43 @@
 section.contact {
+  padding-top: 2em;
+  @include media($medium-screen) {
+    padding-top: 0;
+  }
   h1 {
+    font-size: $base-font-size * 1.6;
     font-family: $sans-serif;
     color: $medium-gray;
+    text-align: center;
+    margin-bottom: em(20);
+    @include media($medium-screen) {
+      text-align: left;
+      font-size: $base-font-size * 2; 
+    }
   }
   form {
-    padding: 3em;
     padding-top: 1em;
-    padding-left: 0;
-    @include span-columns(8);
+    margin-bottom: em(40);
+    @include media($medium-screen) {
+      @include span-columns(8);
+      padding: 3em;
+      padding-left: 0;
+      padding-top: 0;
+    }
 
     .error {
       color: darken(red, 20); 
     }
+    
+    .cta {
+      text-align: center;
+    }
   }
 
   aside {
-    @include span-columns(4);
-    @include omega();
+    @include media($medium-screen) {
+      @include span-columns(4);
+      @include omega();
+    }
     padding: 2em;
     padding-top: 1em;
     padding-bottom: 1em;

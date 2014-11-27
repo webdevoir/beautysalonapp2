@@ -2,11 +2,13 @@
   <h1>Maak een afspraak</h1>
   <%= simple_form_for @contact do |f| %>
     <fieldset>
-        <%= f.input :name, label: "Naam" %>
-        <%= f.input :email, label: "Email" %>
-        <%= f.input :phone, label: "Telefoon" %>
-        <%= f.input :message, as: :text, label: "Gewenste behandeling" %>
-      <%= f.button :submit, "Maak een Afspraak" %>
+      <%= f.input :name, label: "Naam" %>
+      <%= f.input :email, label: "Email" %>
+      <%= f.input :phone, label: "Telefoon" %>
+      <%= f.input :message, as: :text, label: "Gewenste behandeling" %>
+      <div class="cta">
+        <%= f.button :submit, "Maak een Afspraak" %>
+      </div>
     </fieldset>
   <% end %>
   <aside>
