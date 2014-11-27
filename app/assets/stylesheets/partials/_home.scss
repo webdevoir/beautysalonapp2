@@ -37,7 +37,11 @@ section.home {
   .hero-inner {
     @include outer-container;
     @include clearfix;
-    padding: 3em;
+    padding: 1em;
+    padding-top: 2em;
+    @include media($medium-screen) {
+      padding: 3em;
+    }
     margin: auto;
     color: $hero-color;
 
@@ -51,7 +55,7 @@ section.home {
       
       h1 {
         font-family: $display;
-        font-size: 1.6em;
+        font-size: 1.3em;
         color: darken($medium-gray, 20);
         margin-bottom: 1em;
 
@@ -73,8 +77,9 @@ section.home {
         }
       }
     }
-    @include media($medium-screen) {
-      .button_to { float: right; }
+
+    .cta {
+      text-align: center;
     }
   }
 }
