@@ -10,10 +10,17 @@
 
 
   .footer-logo {
-    margin-right: 1em;
-    margin-bottom: 1em;
+
+    @include media($medium-screen) {
+      margin-right: 0;
+    }
 
     @include media($large-screen) {
+      margin-right: 1em;
+    }
+    margin-bottom: 1em;
+
+    @include media($medium-screen) {
       float: left;
       margin-bottom: 0;
     }
@@ -25,7 +32,7 @@
 
   ul {
     margin-bottom: 1em;
-    @include media($large-screen) {
+    @include media($medium-screen) {
       float: left;
       margin-left: 1em;
       margin-bottom: 0;
@@ -34,9 +41,12 @@
 
   ul li {
     padding-right: 1em;
+    @include media($medium-screen) {
+      padding-right: .7em;
+    }
     font-weight: 800;
 
-    @include media($large-screen) {
+    @include media($medium-screen) {
       display: inline;
       text-align: left;
     }
@@ -52,7 +62,7 @@
   }
 
   .footer-secondary-links {
-    @include media($large-screen) {
+    @include media($medium-screen) {
       float: right;
     }
 
@@ -63,7 +73,7 @@
     ul.footer-social {
       margin-top: 1em;
 
-      @include media($large-screen) {
+      @include media($medium-screen) {
         float: right;
         margin-top: 0;
       }
