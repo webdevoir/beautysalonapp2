@@ -258,7 +258,7 @@ header.navigation {
     clear: both;
     background: #505050;
 
-    @include media($large-screen) {
+    @include media($medium-screen) {
       background: transparent;
       float: right;
       clear: none;
@@ -266,7 +266,13 @@ header.navigation {
   }
 
   a.phone {
-    margin-top: 1.2em;
+    @include media($medium-screen) {
+      margin-top: 1.2em;
+      margin-right: em(40);
+    }
+    @include media($large-screen) {
+      margin-right: 0;
+    }
     float: right;
     font-weight: 800;
     color: lighten($navigation-color, 10);
