@@ -14,7 +14,9 @@
       <% end %>
       <p><%= treatment.summary %></p>
       <p class="more_info"><%= link_to "Meer info", behandeling_path(treatment) %></p>
-      <%= button_to "Maak een afspraak", new_contact_path, method: "get" %>
+      <div class="cta">
+        <%= button_to "Maak een afspraak", new_contact_path, method: "get" %>
+      </div>
     </div>
   <% end %>
 </section>
