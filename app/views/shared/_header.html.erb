@@ -17,7 +17,7 @@
     </div>
     <div class="navigation-tools">
       <% if !current_user_admin? %>
-        <a href="javascript:void(0)" class="phone"><i class="fa fa-phone left"></i>0472 24 65 02</a>
+        <a href="tel:0472246502" class="phone"><i class="fa fa-phone left"></i>0472 24 65 02</a>
       <% end %>
       <% if current_user_admin? %>
         <%= link_to "Admin", admin_path, class: "sign-up" %>
