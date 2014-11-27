@@ -1,5 +1,8 @@
 section.home {
-
+  @include media($medium-screen) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
   @include outer-container;
   margin-top: em(40);
 
@@ -59,7 +62,7 @@ section.home {
         color: darken($medium-gray, 20);
         margin-bottom: 1em;
 
-        @include media($large-screen) {
+        @include media($medium-screen) {
           font-size: 2em;
         }
       }
