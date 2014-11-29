@@ -33,6 +33,10 @@ section.home {
     border-radius: 5px;
   }
 
+  @include media($portrait-screen) {
+    @include span-columns(4 of 8);
+  }
+
   @include media($medium-screen) {
     @include span-columns(8);
   }
@@ -108,6 +112,11 @@ section.home {
       font-size: $base-font-size * 1.3;
     }
 
+    @include media($portrait-screen) {
+      @include span-columns(4);
+      @include omega();
+    }
+
     @include media($medium-screen) {
       @include span-columns(4);
       @include omega();
@@ -138,10 +147,17 @@ section.home {
    }
 
    .behandeling {
+
+     @include media($portrait-screen) {
+      @include span-columns (4 of 8);
+      @include omega(2n);
+     }
+
      @include media($medium-screen) {
       @include span-columns(4 of 12);
       @include omega(3n);
      }
+
     background: #f9f9f9;
     border: 3px solid lighten($medium-gray, 10);
     border-radius: 5px;
