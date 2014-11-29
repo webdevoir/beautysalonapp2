@@ -152,7 +152,6 @@ section.home {
 
      @include media($medium-screen) {
        @include span-columns(4 of 12);
-       @include omega(3n);
      }
 
      background: #f9f9f9;

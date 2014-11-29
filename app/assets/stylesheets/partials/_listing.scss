@@ -25,6 +25,10 @@ section.listing {
     @include clearfix;
     margin: em(40) 0;
     padding: 1em;
+
+    @include media($portrait-screen) {
+      @include span-columns(6 of 12);
+    }
     @include media($medium-screen) {
       padding: 3em;
     }
@@ -63,6 +67,12 @@ section.listing {
   .cta {
     margin-top: em(20);
     text-align: center;
+    @include media($portrait-screen) {
+      text-align: left;
+    }
+    @include media($medium-screen) {
+      text-align: left;
+    }
   }
 
   ul {

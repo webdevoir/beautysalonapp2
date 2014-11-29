@@ -322,6 +322,9 @@ article {
 
 
   .content {
+    @include media($portrait-screen) {
+      @include span-columns(6 of 8);
+    }
     @include media($medium-screen) {
       @include span-columns(8);
     }
@@ -340,6 +343,11 @@ article {
   }
 
   aside {
+    @include media($portrait-screen) {
+      @include span-columns(2 of 8);
+      @include omega();
+      float: right;
+    }
     @include media($medium-screen) {
       @include span-columns(4);
       @include omega();
