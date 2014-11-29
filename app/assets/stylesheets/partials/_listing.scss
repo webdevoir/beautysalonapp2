@@ -25,6 +25,7 @@ section.listing {
     @include media($medium-screen) {
       padding: 3em;
     }
+    border: 2px solid lighten($medium-gray, 20);;
     border-radius: 5px;
     background: #f9f9f9;
 
