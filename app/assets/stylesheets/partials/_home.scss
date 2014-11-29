@@ -1,8 +1,6 @@
 section.home {
-  @include media($medium-screen) {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
+  padding-left: 1em;
+  padding-right: 1em;
   @include outer-container;
   margin-top: em(40);
 
