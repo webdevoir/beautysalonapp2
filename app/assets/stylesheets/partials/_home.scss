@@ -61,13 +61,13 @@ section.home {
     .hero-copy {
       
       h1 {
-        font-family: $display;
         font-size: 1.3em;
         color: darken($medium-gray, 20);
         margin-bottom: 1em;
 
         @include media($medium-screen) {
           font-size: 2em;
+          text-align: left;
         }
       }
 
