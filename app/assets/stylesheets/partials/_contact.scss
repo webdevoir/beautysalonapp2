@@ -1,5 +1,7 @@
 section.contact {
   padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
   @include media($medium-screen) {
     padding-top: 0;
     padding-left: 2em;
