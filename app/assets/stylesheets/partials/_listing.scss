@@ -1,13 +1,10 @@
 section.listing {
   padding-top: 2em;
-  h1 {
-    font-family: $sans-serif;
-    text-align: center;
-    @include media($medium-screen) {
-      text-align: left;
-    }
-    font-size: $base-font-size * 1.6;
+  @include media($medium-screen) {
+    padding-left: 2em;
+    padding-right: 2em;
   }
+
   img {
     width: 80%;
     @include media($medium-screen) {
@@ -32,23 +29,15 @@ section.listing {
     background: #f9f9f9;
 
     h1 {
-      font-family: $sans-serif;
       font-size: 1.3em;
       margin: 0 0 (1.3em / 2);
       @include media($medium-screen) {
+        text-align: left;
         font-size: 1.953em;
         line-height: 1.1;
         margin: 0 0 (1.953em / 2);
       }
-      color: darken($medium-gray, 20); 
 
-    }
-
-    h2 {
-      font-size: 1.563em;
-      line-height: 1.2;
-      margin: 0 0 (1.563em / 2);
-      color: $medium-gray;
     }
   }
 

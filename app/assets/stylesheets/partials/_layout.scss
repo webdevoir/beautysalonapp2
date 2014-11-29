@@ -64,8 +64,9 @@ section {
   margin-top: em(40);
 
   h1 {
-    color: darken($pink, 10);
-    font-family: $serif;
+    font-family: $sans-serif;
+    color: darken($medium-gray, 20); 
+    text-align: center;
   }
 }
 
@@ -276,7 +277,7 @@ article {
       font-size: $base-font-size * 2;
     }
     font-family: $sans-serif;
-    color: $medium-gray; 
+    color: darken($medium-gray, 20); 
     margin-bottom: em(20);
     text-align: center;
   }

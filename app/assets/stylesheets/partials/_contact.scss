@@ -2,6 +2,8 @@ section.contact {
   padding-top: 2em;
   @include media($medium-screen) {
     padding-top: 0;
+    padding-left: 2em;
+    padding-right: 2em;
   }
   h1 {
     font-size: $base-font-size * 1.6;
