@@ -259,6 +259,8 @@ article {
   @include media($medium-screen) {
     margin-top: em(40);
     margin-bottom: em(60);
+    padding-left: 2em;
+    padding-right: 2em;
   }
 
   header {
