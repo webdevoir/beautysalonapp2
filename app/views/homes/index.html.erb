@@ -62,4 +62,13 @@
   <% end %>
 </section>
 
+<% content_for :javascript do %>
+  <script>
+    $(document).ready(function () {
+      $('.block').matchHeight();
+      $('.behandeling').matchHeight();
+    });
+  </script>
+<% end %>
+
 
