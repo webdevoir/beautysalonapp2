@@ -65,8 +65,11 @@ section {
 
   h1 {
     font-family: $sans-serif;
-    color: darken($medium-gray, 20); 
     text-align: center;
+  }
+
+  h1, h2 {
+    color: darken($medium-gray, 20); 
   }
 }
 
