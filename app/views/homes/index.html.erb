@@ -19,16 +19,20 @@
     <div class="actie">
       <% if !(@promotions.count > 1) %>
         <% @promotions.each do |promotion| %>
-        <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
-        <p class="tagline"><%= promotion.tagline %></p>
-        <%= image_tag promotion.image %>
-        <p><%= promotion.description %></p>
+          <% cache(promotion) do %>
+          <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
+          <p class="tagline"><%= promotion.tagline %></p>
+          <%= image_tag promotion.image %>
+          <p><%= promotion.description %></p>
+          <% end %>
         <% end %>
       <% else %>
         <% @promotions.each do |promotion| %>
-        <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
-        <p class="tagline"><%= promotion.tagline %></p>
-        <p><%= promotion.description %></p>
+          <% cache(promotion) do %>
+            <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
+            <p class="tagline"><%= promotion.tagline %></p>
+            <p><%= promotion.description %></p>
+          <% end %>
         <% end %>
       <% end %>
   </div>
@@ -46,14 +50,16 @@
           <% if section.category_id != 5 %>
             <% @behandelingen.each do |behandeling| %>
               <% if behandeling.category_id == section.category_id %>
-              <% cache behandeling do %>
-                <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
-              <% end %>
+                <% cache behandeling do %>
+                  <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
+                <% end %>
               <% end %>
             <% end %>
           <% else %>
             <% @products.each do |product| %>
-              <li><%= link_to product.title, producten_path %></li>
+              <% cache product do %>
+                <li><%= link_to product.title, producten_path %></li>
+              <% end %>
             <% end %>
           <% end %>
         </ul>
