@@ -19,20 +19,16 @@
     <div class="actie">
       <% if !(@promotions.count > 1) %>
         <% @promotions.each do |promotion| %>
-        <% cache(promotion) do %>
         <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
         <p class="tagline"><%= promotion.tagline %></p>
         <%= image_tag promotion.image %>
         <p><%= promotion.description %></p>
         <% end %>
-        <% end %>
       <% else %>
         <% @promotions.each do |promotion| %>
-          <% cache(promotion) do %>
-            <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
-            <p class="tagline"><%= promotion.tagline %></p>
-            <p><%= promotion.description %></p>
-          <% end %>
+        <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
+        <p class="tagline"><%= promotion.tagline %></p>
+        <p><%= promotion.description %></p>
         <% end %>
       <% end %>
   </div>
@@ -49,10 +45,10 @@
         <ul class="fa-ul">
           <% if section.category_id != 5 %>
             <% @behandelingen.each do |behandeling| %>
-              <% cache(behandeling) do %>
-                <% if behandeling.category_id == section.category_id %>
+              <% if behandeling.category_id == section.category_id %>
+              <% cache behandeling do %>
                 <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
-                <% end %>
+              <% end %>
               <% end %>
             <% end %>
           <% else %>
