@@ -5,5 +5,8 @@
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
   <script src="//use.typekit.net/qcw3fmf.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
+  <!--[if lte IE 8]>
+  = javascript_include_tag 'selectivizr'
+  <![endif]-->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
