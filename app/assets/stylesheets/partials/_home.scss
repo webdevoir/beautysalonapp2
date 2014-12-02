@@ -60,7 +60,6 @@ section.home {
       
       h1 {
         font-size: 1.3em;
-        font-family: $sans-serif;
         color: darken($medium-gray, 20);
         margin-bottom: 1em;
 
@@ -129,7 +128,7 @@ section.home {
 
  .actie {
    p {
-     font-family: $sans-serif;
+     font-family: $serif;
    }
 
    p.tagline {
@@ -181,7 +180,7 @@ section.home {
      }
 
      p {
-       font-family: $sans-serif;
+       font-family: $serif;
        color: $base-font-color;
        margin-top: em(20);
        margin-bottom: em(20);
