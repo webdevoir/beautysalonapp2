@@ -1,43 +1,28 @@
 <% content_for :description, "Schoonheidssalon Anniek Lambrecht in Blankenberge, gespecialiseerd in huidverbetering en gelaatsverzorging" %>
+
 <section class="home">
   <div class="hero block">
-	<div class="hero-inner">
-		<div class="hero-copy">
-			<h1>Schoonheidssalon Anniek Lambrecht</h1>
-      <%= image_tag "anniek-lambrecht-194x194.jpg", class: "hero-image", alt: "anniek lambrecht" %>
-      <p>Gespecialiseerd in huidverbetering en gelaatsverzorging met Environ vitamine producten en Jane Iredale minerale make up.</p>
-      <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
-		</div>
-    <div class="cta">
-    <%= button_to "Maak een Afspraak", new_contact_path, method: "get" %>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Schoonheidssalon Anniek Lambrecht</h1>
+        <%= image_tag "anniek-lambrecht-194x194.jpg", class: "hero-image", alt: "anniek lambrecht" %>
+        <p>Gespecialiseerd in huidverbetering en gelaatsverzorging met Environ vitamine producten en Jane Iredale minerale make up.</p>
+        <p>Ik werk naar huidverbetering toe en aan elke behandeling gaat een huidanalyse vooraf met productadvies voor de thuisbehandeling.</p>
+      </div>
+      <div class="cta">
+      <%= button_to "Maak een Afspraak", new_contact_path, method: "get" %>
+      </div>
     </div>
-	</div>
-</div>
-<div class="acties block">
-  <div class="acties-inner">
-    <h2>Acties</h2>
-    <div class="actie">
-      <% if !(@promotions.count > 1) %>
-        <% @promotions.each do |promotion| %>
-          <% cache(promotion) do %>
-          <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
-          <p class="tagline"><%= promotion.tagline %></p>
-          <%= image_tag promotion.image %>
-          <p><%= promotion.description %></p>
-          <% end %>
-        <% end %>
-      <% else %>
-        <% @promotions.each do |promotion| %>
-          <% cache(promotion) do %>
-            <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
-            <p class="tagline"><%= promotion.tagline %></p>
-            <p><%= promotion.description %></p>
-          <% end %>
-        <% end %>
-      <% end %>
   </div>
-</div>
-</div>
+  <div class="acties block">
+    <div class="acties-inner">
+      <h2>Acties</h2>
+      <div class="actie">
+        <%= render partial: "promotion", collection: @promotions %>
+      </div>
+    </div>
+  </div>
+
   <% @sections.in_groups_of(3, false) do |sections| %>
   <div class="behandelingen">
     <%= render partial: "section", collection: sections %>
