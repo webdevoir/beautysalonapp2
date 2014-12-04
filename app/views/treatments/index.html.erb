@@ -2,27 +2,7 @@
 <% content_for :description, "aan elke behandeling gaat een huidanalyse vooraf met vrijblijvend productadvies voor de thuisbehandeling" %>
 <section class="listing">
   <h1><%= @category.name.titleize %></h1>
-  <% @treatments.each do |treatment| %>
-    <% cache(treatment) do %>
-      <div class="item">
-        <header>
-          <h1><%= treatment.title %>
-            <% if treatment.price.present? %>
-              &euro; <%= sprintf("%g", treatment.price) %>
-            <% end %>
-          </h1>
-        </header>
-        <% if treatment.image.present? %>
-          <%= image_tag treatment.image.url %>
-        <% end %>
-        <p><%= treatment.summary %></p>
-        <p class="more_info"><%= link_to "Meer info", behandeling_path(treatment) %></p>
-        <div class="cta">
-          <%= button_to "Maak een afspraak", new_contact_path, method: "get" %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render @treatments %>
 </section>
 
 <% content_for :javascript do %>
