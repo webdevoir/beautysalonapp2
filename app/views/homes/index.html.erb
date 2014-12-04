@@ -40,32 +40,7 @@
 </div>
   <% @sections.in_groups_of(3, false) do |sections| %>
   <div class="behandelingen">
-    <% sections.each do |section| %>
-    <div class="behandeling">
-      <div class="behandeling-inner">
-        <h2><%= section.title %></h2>
-        <%= image_tag section.image.url %>
-        <p><%= section.description %></p>
-        <ul class="fa-ul">
-          <% if section.category_id != 5 %>
-            <% @behandelingen.each do |behandeling| %>
-              <% if behandeling.category_id == section.category_id %>
-                <% cache behandeling do %>
-                  <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
-                <% end %>
-              <% end %>
-            <% end %>
-          <% else %>
-            <% @products.each do |product| %>
-              <% cache product do %>
-                <li><%= link_to product.title, producten_path %></li>
-              <% end %>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <% end %>
+    <%= render partial: "section", collection: sections %>
   </div>
   <% end %>
 </section>
