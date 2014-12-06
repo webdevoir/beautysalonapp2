@@ -41,7 +41,7 @@ section.home {
 
   .hero-inner {
     @include outer-container;
-    @include clearfix;
+    // @include clearfix;
     padding: 1em;
     padding-top: 2em;
     @include media($medium-screen) {
