@@ -22,7 +22,6 @@ section.listing {
   }
 
   div.item {
-    @include clearfix;
     margin: em(40) 0;
     padding: 1em;
 
