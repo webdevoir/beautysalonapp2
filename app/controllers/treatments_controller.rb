@@ -6,6 +6,5 @@ class TreatmentsController < ApplicationController
 
   def show
     @treatment = Treatment.friendly.find(params[:id])  
-    fresh_when(@treatment)
   end
 end
