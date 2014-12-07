@@ -1,4 +1,5 @@
-set :stage, :production
+role :app, %w{deploy@178.62.173.211}
+role :web, %w{deploy@178.62.173.211}
+role :db, %w{deploy@178.62.173.211}
 
-# Replace 127.0.0.1 with your server's IP address!
-server '188.226.157.101', user: 'deploy', roles: %w{web app}
+
