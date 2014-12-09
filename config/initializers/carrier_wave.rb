@@ -5,6 +5,7 @@ CarrierWave.configure do |config|
       :provider               => 'AWS',                        # required
       :aws_access_key_id      => Rails.application.secrets.S3_KEY,                        # required
       :aws_secret_access_key  => Rails.application.secrets.S3_SECRET,                        # required
+      :region => 'eu-west-1'
     }
     config.fog_directory  = 'beautysalon2'                     # required
   elsif Rails.env.test?
