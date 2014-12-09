@@ -23,3 +23,6 @@
 
 # Ignore image uploads
 /public/uploads
+
+# Ignore .DS_Store files on Mac
+.DS_Store
