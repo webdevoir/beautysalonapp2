@@ -7,6 +7,7 @@ set :branch, ENV['BRANCH'] || "master"
 
 set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :keep_releases, 5
 
 namespace :deploy do
   %w[start stop restart].each do |command|
