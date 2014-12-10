@@ -24,6 +24,7 @@ section.listing {
   div.item {
     margin: em(40) 0;
     padding: 1em;
+    @include clearfix;
 
     @include media($portrait-screen) {
       @include span-columns(6 of 12);
