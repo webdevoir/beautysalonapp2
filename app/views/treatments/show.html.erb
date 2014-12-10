@@ -1,3 +1,5 @@
+<% content_for :title, " - #{@treatment.title.titleize}" %>
+<% content_for :description, "aan elke behandeling gaat een huidanalyse vooraf met vrijblijvend productadvies voor de thuisbehandeling" %>
 <article class="behandeling">
   <div class="breadcrumb">
     <%= link_to @treatment.category.name, behandelingen_path(@treatment.category.name) %>
