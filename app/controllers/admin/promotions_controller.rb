@@ -6,7 +6,7 @@ class Admin::PromotionsController < ApplicationController
   end
 
   def show
-    @promotion = Promotion.find(params[:id])
+    @promotion = Promotion.friendly.find(params[:id])
     add_breadcrumb @promotion.title
   end
 
@@ -27,11 +27,11 @@ class Admin::PromotionsController < ApplicationController
 
   def edit
     add_breadcrumb "actie aanpassen"
-    @promotion = Promotion.find(params[:id])
+    @promotion = Promotion.friendly.find(params[:id])
   end
 
   def update
-    @promotion = Promotion.find(params[:id])
+    @promotion = Promotion.friendly.find(params[:id])
     if @promotion.update_attributes(promotion_params)
       redirect_to admin_promotions_path, notice: "De actie werd aangepast"
     else
@@ -41,7 +41,7 @@ class Admin::PromotionsController < ApplicationController
   end
 
   def destroy
-    promotion = Promotion.find(params[:id])
+    promotion = Promotion.friendly.find(params[:id])
     promotion.destroy
     redirect_to admin_promotions_path, notice: "De actie werd verwijderd"
   end

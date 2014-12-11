@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211133107) do
+ActiveRecord::Schema.define(version: 20141211185708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,10 @@ ActiveRecord::Schema.define(version: 20141211133107) do
     t.boolean  "visible"
     t.decimal  "price",       precision: 8, scale: 2
     t.text     "summary"
+    t.string   "slug"
   end
+
+  add_index "promotions", ["slug"], name: "index_promotions_on_slug", unique: true, using: :btree
 
   create_table "sections", force: true do |t|
     t.string  "title"

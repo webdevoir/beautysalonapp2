@@ -80,7 +80,7 @@ feature 'Admin interacts with promotions' do
   
   scenario 'admin sees success message when editing a promotion' do
     visit admin_promotions_path
-    find("a[href='/admin/promotions/#{promotion.id}/edit']").click
+    find("a[href='/admin/promotions/#{promotion.title.parameterize}/edit']").click
     find("input[@id='promotion_title']").set("new title")
     find("input[@id='promotion_tagline']").set("new tagline")
     find("textarea[@id='promotion_summary']").set("new summary")
@@ -93,7 +93,7 @@ feature 'Admin interacts with promotions' do
   scenario 'admin sees error message when editing invalid promotion' do
     visit admin_promotions_path
 
-    find("a[href='/admin/promotions/#{promotion.id}/edit']").click
+    find("a[href='/admin/promotions/#{promotion.title.parameterize}/edit']").click
     find("input[@id='promotion_title']").set("")
     find("input[@id='promotion_tagline']").set("new tagline")
     find("textarea[@id='promotion_summary']").set("new summary")

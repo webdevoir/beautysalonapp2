@@ -1,5 +1,5 @@
 class PromotionsController < ApplicationController
   def show
-    @promotion = Promotion.find(params[:id])
+    @promotion = Promotion.friendly.find(params[:id])
   end
 end
