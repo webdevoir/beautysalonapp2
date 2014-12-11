@@ -11,6 +11,7 @@ section.home {
   background-color: lighten($pink, 15);
   border-radius: 5px;
   margin-bottom: em(40);
+  @include clearfix;
   @include media($large-screen) {
     margin-bottom: 0;
   }
