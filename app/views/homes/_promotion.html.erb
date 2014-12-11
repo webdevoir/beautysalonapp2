@@ -1,4 +1,4 @@
 <p class="title"><%= link_to promotion.title, promotion_path(promotion) %></p>
 <p class="tagline"><%= promotion.tagline %></p>
 <%= image_tag promotion.image if Promotion.count == 1 %>
-<p><%= sanitize promotion.description, tags: %w(strong i ul li) %></p>
+<p><%= promotion.summary %></p>

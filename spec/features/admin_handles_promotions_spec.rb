@@ -19,6 +19,7 @@ feature 'Admin interacts with promotions' do
     click_link promotion.title
     expect(page).to have_css 'h1', text: promotion.title
     expect(page).to have_css 'p', text: promotion.tagline 
+    expect(page).to have_css 'p', text: promotion.summary
     expect(page).to have_css 'p', text: promotion.description
     expect(page).to have_xpath("//img[contains(@src,'#{File.basename(promotion.image.url)}')]") 
     expect(page).to have_css 'p', text: promotion.price
@@ -30,6 +31,7 @@ feature 'Admin interacts with promotions' do
     find("input[@value='Actie Toevoegen']").click
     fill_in 'Titel', with: "some title"
     fill_in 'Tagline', with: "some tagline"
+    fill_in 'Samenvatting', with: "some summary text"
     fill_in 'Beschrijving', with: "some description"
     fill_in 'Prijs', with: "40.16"
     click_button 'Actie Toevoegen'
@@ -43,10 +45,24 @@ feature 'Admin interacts with promotions' do
     find("input[@value='Actie Toevoegen']").click
     fill_in 'Titel', with: ""
     fill_in 'Tagline', with: "some tagline"
+    fill_in 'Samenvatting', with: "some summary text"
     fill_in 'Beschrijving', with: "some description"
     click_button 'Actie Toevoegen'
 
     expect(page).to have_css 'p', text: "Title can't be blank"
+  end
+
+  scenario 'admin sees error message when adding promotion without summary' do
+    visit admin_promotions_path
+    
+    find("input[@value='Actie Toevoegen']").click
+    fill_in 'Titel', with: "some title"
+    fill_in 'Tagline', with: "some tagline"
+    fill_in 'Samenvatting', with: ""
+    fill_in 'Beschrijving', with: ""
+    click_button 'Actie Toevoegen'
+
+    expect(page).to have_css 'p', text: "Description can't be blank"
   end
 
   scenario 'admin sees error message when adding promotion without description' do
@@ -55,6 +71,7 @@ feature 'Admin interacts with promotions' do
     find("input[@value='Actie Toevoegen']").click
     fill_in 'Titel', with: "some title"
     fill_in 'Tagline', with: "some tagline"
+    fill_in 'Samenvatting', with: "some summary text"
     fill_in 'Beschrijving', with: ""
     click_button 'Actie Toevoegen'
 
@@ -66,6 +83,7 @@ feature 'Admin interacts with promotions' do
     find("a[href='/admin/promotions/#{promotion.id}/edit']").click
     find("input[@id='promotion_title']").set("new title")
     find("input[@id='promotion_tagline']").set("new tagline")
+    find("textarea[@id='promotion_summary']").set("new summary")
     find("textarea[@id='promotion_description']").set("new description")
     click_button "Actie Aanpassen"
 
@@ -78,6 +96,7 @@ feature 'Admin interacts with promotions' do
     find("a[href='/admin/promotions/#{promotion.id}/edit']").click
     find("input[@id='promotion_title']").set("")
     find("input[@id='promotion_tagline']").set("new tagline")
+    find("textarea[@id='promotion_summary']").set("new summary")
     find("textarea[@id='promotion_description']").set("new description")
     click_button "Actie Aanpassen"
 

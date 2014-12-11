@@ -9,7 +9,7 @@ feature 'Visitor visits homepage' do
     within(".acties-inner") do
       expect(page).to have_css 'p.title', text: promotion.title
       expect(page).to have_css 'p.tagline', text: promotion.tagline
-      expect(page).to have_css 'p', text: promotion.description
+      expect(page).to have_css 'p', text: promotion.summary
       expect(page).to have_xpath("//img[contains(@src,'#{File.basename(promotion.image.url)}')]")
     end
   end
