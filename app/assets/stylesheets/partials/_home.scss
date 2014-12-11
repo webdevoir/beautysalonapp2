@@ -140,6 +140,7 @@ section.home {
  .behandelingen {
    margin-top: em(40);
    margin-bottom: em(40);
+   @include clearfix;
    @include media($large-screen) {
      @include span-columns(12);
    }
