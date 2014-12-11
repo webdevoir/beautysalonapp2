@@ -6,7 +6,7 @@
     <h1><%= @product.title %></h1>
     <div class="section">
       <h2>Beschrijving</h2>
-      <p><%= @product.description %></p>
+      <p><%= sanitize @product.description, tags: %w(strong p i ul li) %></p>
     </div>
     <div class="section">
       <h2>Afbeelding</h2>
