@@ -11,7 +11,7 @@
     <%= image_tag @promotion.image %>
   </aside>
   <div class="content">
-    <p><%= sanitize @promotion.description, tags: %w(strong i ul li) %></p>
+    <p><%= sanitize @promotion.description, tags: %w(strong p i ul li) %></p>
     <p class="price">Prijs: <%= number_to_currency(@promotion.price, :unit => "€") %></p>
     <%= button_to "Maak een Afspraak", new_contact_path, method: "get" %>
   </div>
