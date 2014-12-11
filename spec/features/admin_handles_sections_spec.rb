@@ -51,7 +51,7 @@ feature 'Admin does CRUD operations on sections' do
     find("textarea[@id='section_description']").set("new description")
     click_button "Sectie Aanpassen"
 
-    expect(page).to have_css 'p', text: "De sectie werd aangepast"
+    expect(page).to have_css 'p', text: "De sectie \"new title\" werd aangepast"
     expect(page).to have_css 'a', text: "new title"
   end
 

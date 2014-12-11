@@ -34,7 +34,7 @@ class Admin::SectionsController < ApplicationController
   def update
     @section = Section.find(params[:id])
     if @section.update_attributes(section_params)
-      redirect_to admin_sections_path, notice: "De sectie werd aangepast"
+      redirect_to admin_sections_path, notice: "De sectie \"#{@section.title}\" werd aangepast"
     else
       flash[:alert] = @section.errors.full_messages.join(' ')
       render :edit

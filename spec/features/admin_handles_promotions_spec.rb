@@ -87,7 +87,7 @@ feature 'Admin interacts with promotions' do
     find("textarea[@id='promotion_description']").set("new description")
     click_button "Actie Aanpassen"
 
-    expect(page).to have_content "De actie werd aangepast"
+    expect(page).to have_content "De actie \"new title\" werd aangepast"
   end
   
   scenario 'admin sees error message when editing invalid promotion' do

@@ -33,7 +33,7 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
-      redirect_to admin_products_path, notice: "Het product werd aangepast"
+      redirect_to admin_products_path, notice: "Het product \"#{@product.title}\" werd aangepast"
     else
       flash[:alert] = @product.errors.full_messages.join(' ')
       render :edit

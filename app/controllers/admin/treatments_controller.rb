@@ -38,7 +38,7 @@ class Admin::TreatmentsController < ApplicationController
   def update
     @treatment = Treatment.friendly.find(params[:id])
     if @treatment.update_attributes(treatment_params)
-      redirect_to admin_treatments_path, notice: "De behandeling werd aangepast"
+      redirect_to admin_treatments_path, notice: "De behandeling \"#{@treatment.title}\" werd aangepast"
     else
       flash.alert = @treatment.errors.full_messages.join(' ')
       render :edit

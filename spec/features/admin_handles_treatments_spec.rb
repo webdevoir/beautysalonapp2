@@ -67,7 +67,7 @@ feature 'Admin interacts with treatments' do
     find("input[@id='treatment_price']").set(40.23)
     click_button "Behandeling Aanpassen"
 
-    expect(page).to have_content "De behandeling werd aangepast"
+    expect(page).to have_content "De behandeling \"new title\" werd aangepast"
     expect(page).to have_css 'a', text: "new title"
   end
 

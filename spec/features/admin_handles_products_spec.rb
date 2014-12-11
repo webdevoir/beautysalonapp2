@@ -55,7 +55,7 @@ feature 'Admin interacts with products' do
     find("textarea[@id='product_description']").set("new description")
     click_button "Product Aanpassen"
 
-    expect(page).to have_css 'p', text: "Het product werd aangepast"
+    expect(page).to have_css 'p', text: "Het product \"new title\" werd aangepast"
     expect(page).to have_css 'a', text: "new title"
   end
 

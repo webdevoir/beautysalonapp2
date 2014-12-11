@@ -33,7 +33,7 @@ class Admin::PromotionsController < ApplicationController
   def update
     @promotion = Promotion.friendly.find(params[:id])
     if @promotion.update_attributes(promotion_params)
-      redirect_to admin_promotions_path, notice: "De actie werd aangepast"
+      redirect_to admin_promotions_path, notice: "De actie \"#{@promotion.title}\" werd aangepast"
     else
       flash[:alert] = @promotion.errors.full_messages.join(' ')
       render :edit
