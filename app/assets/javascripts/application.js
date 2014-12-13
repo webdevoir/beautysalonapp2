@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.matchHeight-min.js
 //= require froala_editor.min.js
 //= require plugins/lists.min.js
 //= require_tree .
