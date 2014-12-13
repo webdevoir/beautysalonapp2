@@ -4,17 +4,29 @@ section.home {
   @include outer-container;
   margin-top: em(40);
 
-  .hero {
-  $hero-background-top: darken($base-accent-color, 25); 
-  $hero-background-bottom: adjust-hue($hero-background-top, -70);
   $hero-color: transparentize(white, 0.3);
-  background-color: lighten($pink, 15);
-  border-radius: 5px;
-  margin-bottom: em(40);
-  @include clearfix;
-  @include media($large-screen) {
-    margin-bottom: 0;
+
+  .hero {
+    $hero-background-top: darken($base-accent-color, 25); 
+    $hero-background-bottom: adjust-hue($hero-background-top, -70);
+    background-color: lighten($pink, 15);
+    border-radius: 5px;
+    margin-bottom: em(40);
+    @include clearfix;
+    @include media($large-screen) {
+      margin-bottom: 0;
+    }
+
+
+    @include media($portrait-screen) {
+      @include span-columns(4 of 8);
+    }
+
+    @include media($medium-screen) {
+      @include span-columns(8);
+    }
   }
+
 
   .hero-logo img {
     height: 3em;
@@ -32,17 +44,9 @@ section.home {
     border-radius: 5px;
   }
 
-  @include media($portrait-screen) {
-    @include span-columns(4 of 8);
-  }
-
-  @include media($medium-screen) {
-    @include span-columns(8);
-  }
 
   .hero-inner {
     @include outer-container;
-    // @include clearfix;
     padding: 1em;
     padding-top: 2em;
     @include media($medium-screen) {
@@ -57,38 +61,38 @@ section.home {
       outline: none;
     }
 
-    .hero-copy {
-      
-      h1 {
-        font-size: 1.3em;
-        color: darken($medium-gray, 20);
-        margin-bottom: 1em;
-
-        @include media($medium-screen) {
-          font-size: 2em;
-          text-align: left;
-        }
-      }
-
-      p {
-        margin: auto;
-        margin-bottom: 2em; 
-        font-weight: 200;
-        color: darken($medium-gray, 20);
-        line-height: 1.4em;
-
-        @include media($large-screen) {
-          font-size: 1.1em;
-          text-align: left;
-        }
-      }
-    }
-
     .cta {
       text-align: center;
     }
   }
-}
+
+
+  .hero-copy {
+    
+    h1 {
+      font-size: 1.3em;
+      color: darken($medium-gray, 20);
+      margin-bottom: 1em;
+
+      @include media($medium-screen) {
+        font-size: 2em;
+        text-align: left;
+      }
+    }
+
+    p {
+      margin: auto;
+      margin-bottom: 2em; 
+      font-weight: 200;
+      color: darken($medium-gray, 20);
+      line-height: 1.4em;
+
+      @include media($large-screen) {
+        font-size: 1.1em;
+        text-align: left;
+      }
+    }
+  }
 
   .acties {
     background: #f9f9f9;
@@ -145,59 +149,60 @@ section.home {
      @include span-columns(12);
    }
 
-   .behandeling {
+ }
 
-     @include media($portrait-screen) {
-       @include span-columns (4 of 8);
-       @include omega(2n);
+ .behandeling {
+
+   @include media($portrait-screen) {
+     @include span-columns (4 of 8);
+     @include omega(2n);
+   }
+
+   @include media($medium-screen) {
+     @include span-columns(4 of 12);
+   }
+
+   background: #f9f9f9;
+   border: 2px solid lighten($medium-gray, 20);
+   border-radius: 5px;
+   padding: 2em;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   margin-bottom: em(40);
+   @include media($large-screen) {
+     margin-bottom: 0;
+   }
+
+
+   h2 {
+     font-size: $base-font-size * 1.2;
+     font-family: $sans-serif;
+     text-align: center;
+     margin-bottom: em(15);
+   }
+
+   img {
+     margin-bottom: em(10);
+   }
+
+   p {
+     font-family: $serif;
+     color: $base-font-color;
+     margin-top: em(20);
+     margin-bottom: em(20);
+   }
+
+   .fa-ul {
+     @extend %default-ul;
+     margin-left: 0;
+     padding-left: 1em;
+     li { 
+       line-height: 2em; 
+       font-size: .9em;
      }
-
-     @include media($medium-screen) {
-       @include span-columns(4 of 12);
-     }
-
-     background: #f9f9f9;
-     border: 2px solid lighten($medium-gray, 20);
-     border-radius: 5px;
-     padding: 2em;
-     padding-top: 1em;
-     padding-bottom: 1em;
-     margin-bottom: em(40);
-     @include media($large-screen) {
-       margin-bottom: 0;
-     }
-
-
-     h2 {
-       font-size: $base-font-size * 1.2;
-       font-family: $sans-serif;
-       text-align: center;
-       margin-bottom: em(15);
-     }
-
-     img {
-       margin-bottom: em(10);
-     }
-
-     p {
-       font-family: $serif;
-       color: $base-font-color;
-       margin-top: em(20);
-       margin-bottom: em(20);
-     }
-
-     .fa-ul {
-       @extend %default-ul;
-       margin-left: 0;
-       padding-left: 1em;
-       li { 
-         line-height: 2em; 
-         font-size: .9em;
-       }
-       a {
-         color: darken($base-accent-color, 20);; 
-         text-decoration: underline;
-       }
+     a {
+       color: darken($base-accent-color, 20);; 
+       text-decoration: underline;
      }
    }
  }
