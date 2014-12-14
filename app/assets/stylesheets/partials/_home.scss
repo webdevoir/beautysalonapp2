@@ -9,9 +9,12 @@ section.home {
   .hero {
     $hero-background-top: darken($base-accent-color, 25); 
     $hero-background-bottom: adjust-hue($hero-background-top, -70);
-    background-color: lighten($pink, 15);
+    background-color: #f9f9f9;
     border-radius: 5px;
+    border: 2px solid lighten($pink, 10); 
     margin-bottom: em(40);
+    position: relative;
+    z-index: 1;
     @include clearfix;
     @include media($large-screen) {
       margin-bottom: 0;
@@ -27,6 +30,21 @@ section.home {
     }
   }
 
+  .hero::after {
+    content: " ";
+    display: block;
+    background: image-url('logo-anniek-lambrecht-500.gif') no-repeat;
+    background-position: 40% 0;
+    background-size: cover; 
+    opacity: .2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
 
   .hero-logo img {
     height: 3em;
@@ -34,6 +52,8 @@ section.home {
   }
 
   .hero-image {
+    position: relative;
+    z-index: 2;
     margin: 0 auto;
     display: block;
     margin-bottom: em(20);
