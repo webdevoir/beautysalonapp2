@@ -126,7 +126,7 @@ section.home {
 
     a {
       color: darken($base-accent-color, 20);
-      border-bottom: 2px solid darken($base-accent-color, 20);
+      border-bottom: 2px solid darken($base-accent-color, 10);
  
     }
 
@@ -221,7 +221,7 @@ section.home {
        font-size: .9em;
      }
      a {
-       color: darken($base-accent-color, 20);; 
+       color: darken($base-accent-color, 10); 
        text-decoration: underline;
      }
    }
