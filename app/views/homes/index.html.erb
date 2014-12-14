@@ -1,7 +1,7 @@
 <% content_for :description, "Schoonheidssalon Anniek Lambrecht in Blankenberge, gespecialiseerd in huidverbetering en gelaatsverzorging" %>
 
 <section class="home">
-  <div class="hero" data-mh="block">
+  <div class="hero block">
     <div class="hero-inner">
       <div class="hero-copy">
         <h1>Schoonheidssalon Anniek Lambrecht</h1>
@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-  <div class="acties" data-mh="block">
+  <div class="acties block">
     <div class="acties-inner">
       <h2>Acties</h2>
       <div class="actie">
@@ -29,6 +29,16 @@
   </div>
   <% end %>
 </section>
+
+<% content_for :javascript do %>
+  <script>
+  $(document).ready(function () {
+    $('.block').matchHeight();
+    $('.row').matchHeight();
+  });
+  </script>
+<% end %>
+
 
 
 
