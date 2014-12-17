@@ -159,6 +159,10 @@ section.home {
    p.tagline {
      font-style: italic;
    }
+
+   img {
+     border-radius: 5px;
+   }
  }
 
  .behandelingen {
@@ -203,6 +207,7 @@ section.home {
 
    img {
      margin-bottom: em(10);
+     border-radius: 5px;
    }
 
    p {
