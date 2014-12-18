@@ -11,8 +11,8 @@ CarrierWave.configure do |config|
   elsif Rails.env.test?
     config.storage = :file
     config.enable_processing = false
-    # config.fog_attributes = {'Cache-Control'=>"max-age=#{365.day.to_i}"}
-    config.aws_attributes = { :cache_control => 'max-age=315576000', :expires => 1.year.from_now.httpdate }
+    config.fog_attributes = {'Cache-Control'=>"max-age=#{365.day.to_i}"}
+    # config.aws_attributes = { :cache_control => 'max-age=315576000', :expires => 1.year.from_now.httpdate }
 
     # make sure our uploader is auto-loaded
     PromotionImageUploader
