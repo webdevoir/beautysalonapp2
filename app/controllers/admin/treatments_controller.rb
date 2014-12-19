@@ -3,10 +3,10 @@ class Admin::TreatmentsController < ApplicationController
   add_breadcrumb "behandelingen", :admin_treatments_path
   def index
     if (params.has_key?(:treatment) && (params[:treatment][:category] != ""))
-      @treatments = Treatment.filter(params[:treatment][:category])
+      @treatments = Treatment.filter(params[:treatment][:category]).order(:position)
       @selected = params[:treatment].try(:[], :category)
     else
-      @treatments = Treatment.all.order(:id)
+      @treatments = Treatment.all.order(:position)
     end
   end
 
