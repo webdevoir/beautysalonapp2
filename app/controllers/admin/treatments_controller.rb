@@ -51,6 +51,13 @@ class Admin::TreatmentsController < ApplicationController
     redirect_to admin_treatments_path, notice: "De behandeling werd verwijderd"
   end
 
+  def sort
+    params[:treatment].each_with_index do |id, index|
+     Treatment.where(id: id).update_all({position: index+1})
+    end
+    render nothing: true
+  end
+
 
   private
 

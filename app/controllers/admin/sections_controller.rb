@@ -3,7 +3,7 @@ class Admin::SectionsController < ApplicationController
   add_breadcrumb "secties", :admin_sections_path
 
   def index
-    @sections = Section.all.order(:id)
+    @sections = Section.order("position")
   end
 
   def show
@@ -47,7 +47,18 @@ class Admin::SectionsController < ApplicationController
     redirect_to admin_sections_path, notice: "De sectie werd verwijderd"
   end
 
+  def sort
+    params[:section].each_with_index do |id, index|
+     Section.where(id: id).update_all({position: index+1})
+    end
+    render nothing: true
+  end
+
   private
+
+  def order_params
+    params.permit(section: [])
+  end
 
   def section_params
     params.require(:section).permit(:title, :description, :image, :remove_image, :category_id)
