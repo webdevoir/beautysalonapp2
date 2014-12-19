@@ -29,8 +29,12 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :treatments
+    resources :treatments do
+      collection { post :sort }
+    end
+
     resources :products
+
     resources :sections do
       collection { post :sort }
     end

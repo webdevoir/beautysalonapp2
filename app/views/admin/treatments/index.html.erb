@@ -9,15 +9,15 @@
   <% end %>
   </div>
   <%= button_to "Behandeling Toevoegen", new_admin_treatment_path, method: "get" %>
-  <table class="table-borders">
-    <tbody>
+  <table id="treatments" class="table-borders">
+    <tbody data-update-url="<%= sort_admin_treatments_url %>">
     <% if @treatments.count != 0 %>
       <% @treatments.each do |treatment| %>
-        <tr>
+        <%= content_tag_for :tr, treatment do %>
           <td><%= link_to treatment.title, admin_treatment_path(treatment) %></td>
           <td><%= link_to "Aanpassen", edit_admin_treatment_path(treatment) %>&nbsp;&nbsp;
             <%= link_to "Verwijderen", admin_treatment_path(treatment), method: :delete, data: { confirm: "Ben je zeker?" } %></td>
-        </tr>
+          <% end %>
       <% end %>
     <% else %>
       <p class="no-items">Er zijn momenteel geen behandelingen, voeg een nieuwe behandeling toe</p>
