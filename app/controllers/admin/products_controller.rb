@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
   add_breadcrumb "dashboard", :admin_path
   add_breadcrumb "producten", :admin_products_path
   def index
-    @products = Product.all.order(:id)
+    @products = Product.order_by_position
   end
 
   def show
@@ -44,6 +44,13 @@ class Admin::ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.destroy
     redirect_to admin_products_path, notice: "Het product werd verwijderd" 
+  end
+
+  def sort
+    params[:product].each_with_index do |id, index|
+      Product.where(id: id).update_all({position: index+1})
+    end
+    render nothing: true
   end
 
   private

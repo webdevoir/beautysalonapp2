@@ -5,14 +5,14 @@
   <div class="add">
     <%= button_to "Product Toevoegen", new_admin_product_path, method: "get" %>
 </div>
-  <table class="table-borders">
-    <tbody>
+  <table id="products" class="table-borders">
+    <tbody data-update-url="<%= sort_admin_products_url %>">
     <% if @products.count != 0 %>
       <% @products.each do |product| %>
-        <tr>
+        <%= content_tag_for :tr, product do %>
           <td><%= link_to product.title, admin_product_path(product) %></td>
           <td><%= link_to "Aanpassen", edit_admin_product_path(product) %>&nbsp;&nbsp;<%= link_to "Verwijderen", admin_product_path(product), method: :delete, data: { confirm: "Ben je zeker?" } %></td>
-        </tr>
+        <% end %>
       <% end %>
     <% else %>
       <p class="no-items">Er zijn momenteel geen producten, voeg een nieuw product toe</p>

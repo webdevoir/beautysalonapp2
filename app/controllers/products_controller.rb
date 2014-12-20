@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.order(:created_at)
+    @products = Product.order_by_position
     fresh_when(@products)
   end
 end

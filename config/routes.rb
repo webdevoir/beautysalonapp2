@@ -33,7 +33,9 @@ Rails.application.routes.draw do
       collection { post :sort }
     end
 
-    resources :products
+    resources :products do
+      collection { post :sort }
+    end
 
     resources :sections do
       collection { post :sort }
