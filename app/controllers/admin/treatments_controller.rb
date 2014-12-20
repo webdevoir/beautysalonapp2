@@ -6,7 +6,7 @@ class Admin::TreatmentsController < ApplicationController
       @treatments = Treatment.filter_by_category(params[:treatment][:category])
       @selected = params[:treatment].try(:[], :category)
     else
-      @treatments = Treatment.all.sort_by_category
+      @treatments = Treatment.all.order_by_position
     end
   end
 

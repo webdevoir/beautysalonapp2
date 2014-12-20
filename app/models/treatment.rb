@@ -3,7 +3,8 @@ class Treatment < ActiveRecord::Base
   friendly_id :title, use: :slugged
 
   scope :filter_by_category, ->(category){ filter(category).order(:position) }
-  scope :sort_by_category, ->{ order(:position) }
+  scope :order_by_position, ->{ order(:position) }
+  scope :sort_by_category, ->(category_id){ all.where(category_id: category_id).order(:position) }
 
   belongs_to :category
   validates :title, :summary, :description, presence: true

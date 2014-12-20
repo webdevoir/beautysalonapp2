@@ -3,7 +3,7 @@ class Admin::SectionsController < ApplicationController
   add_breadcrumb "secties", :admin_sections_path
 
   def index
-    @sections = Section.order("position")
+    @sections = Section.sort_by_position
   end
 
   def show
