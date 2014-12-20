@@ -2,6 +2,9 @@ class Treatment < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  scope :filter_by_category, ->(category){ filter(category).order(:position) }
+  scope :sort_by_category, ->{ order(:position) }
+
   belongs_to :category
   validates :title, :summary, :description, presence: true
   validates :summary, length: { maximum: 150, :too_long => "Samenvatting is te lang (maximum 150 karakters)" }

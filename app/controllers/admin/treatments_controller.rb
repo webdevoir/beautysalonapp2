@@ -2,11 +2,11 @@ class Admin::TreatmentsController < ApplicationController
   add_breadcrumb "dashboard", :admin_path
   add_breadcrumb "behandelingen", :admin_treatments_path
   def index
-    if (params.has_key?(:treatment) && (params[:treatment][:category] != ""))
-      @treatments = Treatment.filter(params[:treatment][:category]).order(:position)
+    if (category_selected?)
+      @treatments = Treatment.filter_by_category(params[:treatment][:category])
       @selected = params[:treatment].try(:[], :category)
     else
-      @treatments = Treatment.all.order(:position)
+      @treatments = Treatment.all.sort_by_category
     end
   end
 
@@ -60,6 +60,10 @@ class Admin::TreatmentsController < ApplicationController
 
 
   private
+
+  def category_selected?
+    params.has_key?(:treatment) && (params[:treatment][:category] != "")
+  end
 
   def treatment_params
     params.required(:treatment).permit(:title, :tagline, :summary, :description, :image, :remove_image, :price, :category_id)
