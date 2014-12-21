@@ -29,7 +29,7 @@
 <script>
 $(document).ready(function() {
   var menu = $('#navigation-menu');
-  var menuToggle = $('#js-mobile-menu');
+  var menuToggle = $('#js-mobile-menu').unbind();
   var signUp = $('.sign-up');
 
   $(menuToggle).on('click', function(e) {
