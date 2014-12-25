@@ -11,7 +11,7 @@ section.home {
     $hero-background-bottom: adjust-hue($hero-background-top, -70);
     background-color: #f9f9f9;
     border-radius: 5px;
-    border: 2px solid lighten($pink, 10); 
+    border: 2px solid lighten($medium-gray, 20); 
     margin-bottom: em(40);
     position: relative;
     z-index: 1;
@@ -92,7 +92,7 @@ section.home {
     h1 {
       font-size: 1.2em;
       color: darken($medium-gray, 20);
-      margin-bottom: 1em;
+      margin-bottom: 1.3em;
 
       @include media($medium-screen) {
         font-size: 1.8em;
@@ -125,8 +125,8 @@ section.home {
     }
 
     a {
-      color: darken($base-accent-color, 20);
-      border-bottom: 2px solid darken($base-accent-color, 10);
+      color: $base-accent-color;
+      border-bottom: 2px solid $base-accent-color;
  
     }
 
@@ -144,7 +144,7 @@ section.home {
       @include omega();
     }
 
-    border: 2px solid lighten($pink, 10);
+    border: 2px solid lighten($medium-gray, 20);
     border-radius: 5px;
     padding: 2em;
     padding-top: 1em;
