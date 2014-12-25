@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "anthony.candaele@webmove.be"
+  default from: "info@anniek-lambrecht.be"
 
   def contact_email(contact)
     @contact = contact
