@@ -36,6 +36,10 @@ header.navigation {
     font-weight: 600;
 
     color: lighten($base-accent-color, 10);
+
+    &:hover {
+      color: $base-accent-color;
+    }
   }
 
   

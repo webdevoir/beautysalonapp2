@@ -11,8 +11,14 @@
 
   .footer-logo {
 
-    font-weight: 600;
-    color: lighten($base-accent-color, 10);
+    a {
+      color: lighten($base-accent-color, 10);
+      font-weight: 600;
+
+      &:hover {
+        color: $base-accent-color;
+      }
+    }
 
     @include media($medium-screen) {
       margin-right: 0;
@@ -28,10 +34,6 @@
       margin-bottom: 0;
     }
   }
-
-  .footer-logo img {
-    height: 1.6em;
-  } 
 
   ul {
     margin-bottom: 1em;
