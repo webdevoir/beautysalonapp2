@@ -11,6 +11,9 @@
 
   .footer-logo {
 
+    font-weight: 600;
+    color: lighten($base-accent-color, 10);
+
     @include media($medium-screen) {
       margin-right: 0;
     }

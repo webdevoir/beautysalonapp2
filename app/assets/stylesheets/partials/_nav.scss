@@ -32,11 +32,10 @@ header.navigation {
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
+    line-height: $navigation-height;
+    font-weight: 600;
 
-    img {
-      max-height: $navigation-height;
-      padding: .8em 0;
-    }
+    color: lighten($base-accent-color, 10);
   }
 
   
@@ -115,7 +114,7 @@ header.navigation {
     a {
       color: $navigation-color;
       display: inline-block;
-      font-weight: 400;
+      font-weight: 600;
 
       @include media ($horizontal-bar-mode) {
         padding-right: 1em;
