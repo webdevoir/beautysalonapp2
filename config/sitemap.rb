@@ -25,11 +25,11 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
   Category.find_each do |category|
-    add behandelingen_path(category.id), :priority => 0.7, :changefreq => 'weekly'
+    add behandelingen_path(category), :priority => 0.7, :changefreq => 'weekly'
   end
 
   Treatment.find_each do |treatment|
-    add behandeling_path(treatment.id), :priority => 0.7, :changefreq => 'weekly'
+    add behandeling_path(treatment), :priority => 0.7, :changefreq => 'weekly'
   end
 
   add producten_path, :priority => 0.5, :changefreq => 'monthly'
