@@ -10,6 +10,7 @@
     <%= yield %>
   </div>
   <%= render "shared/footer" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= yield(:javascript) %>
 </body>
 </html>
