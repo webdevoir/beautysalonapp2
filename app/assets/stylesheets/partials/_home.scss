@@ -122,12 +122,11 @@ section.home {
       text-align: center;
       margin-bottom: em(15);
       font-weight: 800;
+      text-transform: uppercase;
     }
 
     a {
       color: $base-accent-color;
-      border-bottom: 2px solid $base-accent-color;
- 
     }
 
     p.title {
@@ -153,7 +152,7 @@ section.home {
 
  .actie {
    p {
-     font-family: $serif;
+     font-family: $sans-serif;
    }
 
    p.tagline {
@@ -162,6 +161,7 @@ section.home {
 
    img {
      border-radius: 5px;
+     margin-bottom: em(20);
    }
  }
 
@@ -190,7 +190,7 @@ section.home {
    border: 2px solid lighten($medium-gray, 20);
    border-radius: 5px;
    padding: 2em;
-   padding-top: 1em;
+   padding-top: 2em;
    padding-bottom: 1em;
    margin-bottom: em(40);
    @include media($large-screen) {
@@ -203,6 +203,7 @@ section.home {
      font-family: $sans-serif;
      text-align: center;
      margin-bottom: em(15);
+     text-transform: uppercase;
    }
 
    img {
@@ -211,23 +212,20 @@ section.home {
    }
 
    p {
-     font-family: $serif;
+     font-family: $sans-serif;
      color: $base-font-color;
      margin-top: em(20);
      margin-bottom: em(20);
    }
 
    .fa-ul {
-     @extend %default-ul;
      margin-left: 0;
-     padding-left: 1em;
      li { 
-       line-height: 2em; 
-       font-size: .9em;
+       margin-bottom: em(10);
      }
      a {
-       color: darken($base-accent-color, 10); 
-       text-decoration: underline;
+       color: $base-accent-color; 
+       font-weight: 600;
      }
    }
  }
