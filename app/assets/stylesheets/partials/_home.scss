@@ -122,7 +122,9 @@ section.home {
       text-align: center;
       margin-bottom: em(15);
       font-weight: 800;
-      text-transform: uppercase;
+      @include media($large-screen) {
+        text-transform: uppercase;
+      }
     }
 
     a {
