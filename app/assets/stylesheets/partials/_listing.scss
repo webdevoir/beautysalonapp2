@@ -37,6 +37,7 @@ section.listing {
     background: #f9f9f9;
 
     h1 {
+      font-family: $serif;
       font-size: 1em;
       margin: 0 0 (2em / 2);
       @include media($medium-screen) {
@@ -55,7 +56,7 @@ section.listing {
   }
 
   p {
-    font-family: $serif;
+    font-family: $sans-serif;
     @include media($medium-screen) {
       font-size: 1.25em;
       line-height: 1.6;
