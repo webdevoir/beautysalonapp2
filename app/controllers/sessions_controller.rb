@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "Je bent uitgelogd!"
+    redirect_to root_path(protocol: 'http'), notice: "Je bent uitgelogd!"
   end
 end
