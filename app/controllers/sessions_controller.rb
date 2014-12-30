@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  force_ssl unless Rails.env.development?
   def new
   
   end
