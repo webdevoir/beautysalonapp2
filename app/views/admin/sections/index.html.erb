@@ -7,7 +7,7 @@
   </div>
   <table id="sections" class="table-borders">
     <tbody data-update-url="<%= sort_admin_sections_url %>">
-    <% if @sections.count != 0 %>
+    <% if available?(@sections) %>
       <% @sections.each do |section| %>
         <%= content_tag_for :tr, section do %>
           <td><%= link_to section.title, admin_section_path(section) %></td>

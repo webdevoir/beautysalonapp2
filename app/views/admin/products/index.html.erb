@@ -7,7 +7,7 @@
 </div>
   <table id="products" class="table-borders">
     <tbody data-update-url="<%= sort_admin_products_url %>">
-    <% if @products.count != 0 %>
+    <% if available?(@products) %>
       <% @products.each do |product| %>
         <%= content_tag_for :tr, product do %>
           <td><%= link_to product.title, admin_product_path(product) %></td>

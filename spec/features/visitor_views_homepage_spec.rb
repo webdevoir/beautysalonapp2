@@ -50,8 +50,9 @@ feature 'Visitor visits homepage' do
   end
 
   scenario 'visitor views section' do
-    section = create(:section, category_id: 1)
-    behandeling = create(:treatment, category_id: 1)
+    category = Category.create(name: "gelaatsverzorging")
+    section = create(:section, category_id: category.id)
+    behandeling = create(:treatment, category_id: category.id)
 
     visit root_path
 

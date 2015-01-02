@@ -4,15 +4,15 @@
     <%= image_tag section.image.url if section.image.present? %>
     <p><%= section.description %></p>
     <ul class="fa-ul">
-      <% if section.category_id != 5 %>
-        <% @behandelingen.each do |behandeling| %>
-          <% if behandeling.category_id == section.category_id %>
-              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
-          <% end %>
-        <% end %>
-      <% else %>
+      <% if is_product_category?(section.category_id) %>
         <% @products.each do |product| %>
           <li><%= link_to product.title, producten_path %></li>
+        <% end %>
+      <% else %>
+        <% @behandelingen.each do |behandeling| %>
+          <% if belongs_to_section?(behandeling, section) %>
+              <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>
