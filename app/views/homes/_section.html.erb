@@ -1,7 +1,7 @@
 <div class="behandeling">
   <div class="behandeling-inner row">
     <h2><%= section.title %></h2>
-    <%= image_tag section.image.url if section.image.present? %>
+    <%= image_for(section) %>
     <p><%= section.description %></p>
     <ul class="fa-ul">
       <% if is_product_category?(section.category_id) %>

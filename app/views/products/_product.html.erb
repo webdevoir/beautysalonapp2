@@ -2,8 +2,6 @@
   <header>
     <h1><%= product.title %></h1>
   </header>
-  <% if product.image.present? %>
-    <%= image_tag product.image.url %>
-  <% end %>
+  <%= image_for(product) %>
   <p><%= sanitize product.description, tags: %w(strong p i ul li) %></p>
 </div>

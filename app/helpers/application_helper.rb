@@ -14,4 +14,8 @@ module ApplicationHelper
   def available?(collection)
     collection.count != 0
   end
+
+  def image_for(object)
+    image_tag(object.image.url) if object.image.present?
+  end
 end

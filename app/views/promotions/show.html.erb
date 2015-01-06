@@ -8,7 +8,7 @@
     <p class="tagline"><%= @promotion.tagline %></p>
   </header>
   <aside>
-    <%= image_tag @promotion.image %>
+    <%= image_for(@promotion) %>
   </aside>
   <div class="content">
     <p><%= sanitize @promotion.description, tags: %w(strong p i ul li) %></p>

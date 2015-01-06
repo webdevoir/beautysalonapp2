@@ -10,9 +10,7 @@
     <p class="tagline"><%= @treatment.tagline %></p>
   </header>
   <aside>
-    <% if @treatment.image.present? %>
-      <%= image_tag @treatment.image.url %>
-    <% end %>
+    <%= image_for(@treatment) %>
   </aside>
   <div class="content">
     <p><%= sanitize @treatment.description, tags: %w(strong p i ul li) %></p>
