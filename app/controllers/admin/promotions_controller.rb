@@ -47,7 +47,7 @@ class Admin::PromotionsController < ApplicationController
   end
 
   def hide
-    @promotion = Promotion.find(params[:id])
+    @promotion = Promotion.friendly.find(params[:id])
     @promotion.toggle_visibility!
     render "hide.js.erb"
   end
