@@ -36,7 +36,7 @@ gem 'bourbon'
 gem 'neat'
 
 gem 'font-awesome-rails', '~> 4.2.0.0' 
-gem 'wysiwyg-rails', '~> 1.2.4'
+gem 'wysiwyg-rails', '~> 1.2.6'
 
 group :development do
   gem 'capistrano', '~> 3.2.1'
