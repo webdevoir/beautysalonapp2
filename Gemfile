@@ -43,6 +43,7 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1.3'
   gem 'capistrano-rails', '~> 1.1.2'
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  gem 'lol_dba'
 end
 
 

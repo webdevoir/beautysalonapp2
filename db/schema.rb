@@ -11,23 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220134553) do
+ActiveRecord::Schema.define(version: 20150305184500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: true do |t|
-    t.string "name"
-    t.string "slug"
+  create_table "categories", force: :cascade do |t|
+    t.string "name", limit: 255
+    t.string "slug", limit: 255
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
 
-  create_table "friendly_id_slugs", force: true do |t|
-    t.string   "slug",                      null: false
-    t.integer  "sluggable_id",              null: false
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",           limit: 255, null: false
+    t.integer  "sluggable_id",               null: false
     t.string   "sluggable_type", limit: 50
-    t.string   "scope"
+    t.string   "scope",          limit: 255
     t.datetime "created_at"
   end
 
@@ -36,58 +36,61 @@ ActiveRecord::Schema.define(version: 20141220134553) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
-  create_table "products", force: true do |t|
-    t.string   "title"
+  create_table "products", force: :cascade do |t|
+    t.string   "title",       limit: 255
     t.text     "description"
-    t.string   "image"
+    t.string   "image",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
   end
 
-  create_table "promotions", force: true do |t|
-    t.string   "title"
-    t.string   "tagline"
+  create_table "promotions", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.string   "tagline",     limit: 255
     t.text     "description"
-    t.string   "image"
+    t.string   "image",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "visible"
-    t.decimal  "price",       precision: 8, scale: 2
+    t.decimal  "price",                   precision: 8, scale: 2
     t.text     "summary"
-    t.string   "slug"
+    t.string   "slug",        limit: 255
   end
 
   add_index "promotions", ["slug"], name: "index_promotions_on_slug", unique: true, using: :btree
 
-  create_table "sections", force: true do |t|
-    t.string  "title"
+  create_table "sections", force: :cascade do |t|
+    t.string  "title",       limit: 255
     t.text    "description"
-    t.string  "image"
+    t.string  "image",       limit: 255
     t.integer "category_id"
     t.integer "position"
   end
 
-  create_table "treatments", force: true do |t|
-    t.string   "title"
-    t.string   "tagline"
+  add_index "sections", ["category_id"], name: "index_sections_on_category_id", using: :btree
+
+  create_table "treatments", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.string   "tagline",     limit: 255
     t.text     "summary"
     t.text     "description"
-    t.decimal  "price",       precision: 8, scale: 2
+    t.decimal  "price",                   precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
+    t.string   "image",       limit: 255
     t.integer  "category_id"
-    t.string   "slug"
+    t.string   "slug",        limit: 255
     t.integer  "position"
   end
 
+  add_index "treatments", ["category_id"], name: "index_treatments_on_category_id", using: :btree
   add_index "treatments", ["slug"], name: "index_treatments_on_slug", unique: true, using: :btree
 
-  create_table "users", force: true do |t|
-    t.string  "name"
-    t.string  "email"
-    t.string  "password_digest"
+  create_table "users", force: :cascade do |t|
+    t.string  "name",            limit: 255
+    t.string  "email",           limit: 255
+    t.string  "password_digest", limit: 255
     t.boolean "admin"
   end
 
