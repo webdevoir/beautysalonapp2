@@ -56,7 +56,7 @@ section.home {
     z-index: 2;
     margin: 0 auto;
     display: block;
-    margin-bottom: em(20);
+    margin-bottom: em(40);
     @include media($large-screen) {
       float: left;
       margin-right: em(20);
@@ -102,13 +102,13 @@ section.home {
 
     p {
       margin: auto;
-      margin-bottom: 2em; 
+      margin-bottom: 1em; 
       font-weight: 200;
       color: darken($medium-gray, 20);
       line-height: 1.4em;
 
       @include media($large-screen) {
-        font-size: 1.1em;
+        font-size: 1.3em;
         text-align: left;
       }
     }
