@@ -12,6 +12,6 @@ describe Treatment do
   it "accepts a blank price" do
     treat = build(:treatment, price: "") 
 
-    expect(treat.valid?).to be_truthy
+    expect(treat.valid?).to be true
   end
 end

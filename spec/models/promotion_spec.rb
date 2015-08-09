@@ -10,6 +10,6 @@ describe Promotion do
   it "accepts a blank price" do
     promotion = build(:promotion, price: "")
 
-    expect(promotion.valid?).to be_truthy
+    expect(promotion.valid?).to be true
   end
 end

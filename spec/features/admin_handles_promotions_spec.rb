@@ -2,8 +2,10 @@ require 'rails_helper'
 
 feature 'Admin interacts with promotions' do
   let!(:promotion) { create(:promotion) }
-  scenario 'admin views promotions' do
+  before do
     visit admin_promotions_path
+  end
+  scenario 'admin views promotions' do
     expect(page).to have_css 'td', text: promotion.title
   end
 
@@ -15,7 +17,6 @@ feature 'Admin interacts with promotions' do
   end
 
   scenario 'admin clicks promotion and views promotion details' do
-    visit admin_promotions_path
     click_link promotion.title
     expect(page).to have_css 'h1', text: promotion.title
     expect(page).to have_css 'p', text: promotion.tagline 
@@ -26,7 +27,6 @@ feature 'Admin interacts with promotions' do
   end
   
   scenario 'admin sees success message when adding a valid promotion' do
-    visit admin_promotions_path
     
     find("input[@value='Actie Toevoegen']").click
     fill_in 'Titel', with: "some title"
@@ -40,7 +40,6 @@ feature 'Admin interacts with promotions' do
   end
 
   scenario 'admin sees error message when adding promotion without title' do
-    visit admin_promotions_path
     
     find("input[@value='Actie Toevoegen']").click
     fill_in 'Titel', with: ""
@@ -53,7 +52,6 @@ feature 'Admin interacts with promotions' do
   end
 
   scenario 'admin sees error message when adding promotion without summary' do
-    visit admin_promotions_path
     
     find("input[@value='Actie Toevoegen']").click
     fill_in 'Titel', with: "some title"
@@ -66,7 +64,6 @@ feature 'Admin interacts with promotions' do
   end
 
   scenario 'admin sees error message when adding promotion without description' do
-    visit admin_promotions_path
     
     find("input[@value='Actie Toevoegen']").click
     fill_in 'Titel', with: "some title"
@@ -79,7 +76,6 @@ feature 'Admin interacts with promotions' do
   end
   
   scenario 'admin sees success message when editing a promotion' do
-    visit admin_promotions_path
     find("a[href='/admin/promotions/#{promotion.title.parameterize}/edit']").click
     find("input[@id='promotion_title']").set("new title")
     find("input[@id='promotion_tagline']").set("new tagline")
@@ -91,7 +87,6 @@ feature 'Admin interacts with promotions' do
   end
   
   scenario 'admin sees error message when editing invalid promotion' do
-    visit admin_promotions_path
 
     find("a[href='/admin/promotions/#{promotion.title.parameterize}/edit']").click
     find("input[@id='promotion_title']").set("")
@@ -104,7 +99,6 @@ feature 'Admin interacts with promotions' do
   end
 
   scenario 'an admin deletes a promotion' do
-    visit admin_promotions_path
 
     click_link 'Verwijderen'
     expect(page).to have_css 'p', text: "De actie werd verwijderd"

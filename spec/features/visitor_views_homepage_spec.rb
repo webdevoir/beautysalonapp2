@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 feature 'Visitor visits homepage' do
+  let!(:promotion) { create(:promotion, visible: true) }
 
   scenario 'admin views promotions' do
-    promotion = create(:promotion, visible: true) 
 
     visit root_path
     within(".acties-inner") do
@@ -37,7 +37,6 @@ feature 'Visitor visits homepage' do
   end
 
   scenario 'visitor clicks promotion link and sees promotion details' do
-    promotion = create(:promotion, visible: true)
     visit root_path
 
     click_link promotion.title 

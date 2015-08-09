@@ -2,8 +2,10 @@ require 'rails_helper'
 
 feature 'Admin interacts with products' do
   let!(:product) { create(:product) }
-  scenario 'admin views products' do
+  before do
     visit admin_products_path
+  end
+  scenario 'admin views products' do
 
     expect(page).to have_css 'td', text: product.title
   end
@@ -16,7 +18,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'admin clicks on product title and sees product details' do
-    visit admin_products_path
     click_link product.title
 
     expect(page).to have_css 'h1', text: product.title
@@ -25,7 +26,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'admin sees success message when add a valid product' do
-    visit admin_products_path
 
     find("input[@value='Product Toevoegen']").click
     fill_in 'Titel', with: "some title"
@@ -37,7 +37,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'admin sees error message when adding an invalid product' do
-    visit admin_products_path
 
     find("input[@value='Product Toevoegen']").click
     fill_in 'Titel', with: ""
@@ -48,7 +47,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'admin sees success message when editing a product' do
-    visit admin_products_path
     
     find("a[href='/admin/products/#{product.id}/edit']").click
     find("input[@id='product_title']").set("new title")
@@ -60,7 +58,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'admin sees error message when editing invalid promotion' do
-    visit admin_products_path
     
     find("a[href='/admin/products/#{product.id}/edit']").click
     find("input[@id='product_title']").set("")
@@ -71,7 +68,6 @@ feature 'Admin interacts with products' do
   end
 
   scenario 'an admin deletes a promotion' do
-    visit admin_products_path
 
     click_link 'Verwijderen'
 
