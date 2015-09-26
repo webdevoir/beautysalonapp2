@@ -30,6 +30,9 @@ Rails.application.routes.draw do
     end
 
     resources :treatments do
+      member do
+        patch :hide
+      end
       collection { post :sort }
     end
 

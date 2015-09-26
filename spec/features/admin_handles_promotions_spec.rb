@@ -99,9 +99,24 @@ feature 'Admin interacts with promotions' do
   end
 
   scenario 'an admin deletes a promotion' do
-
     click_link 'Verwijderen'
     expect(page).to have_css 'p', text: "De actie werd verwijderd"
     expect(page).not_to have_css 'a', text: "promotion1"
+  end
+
+  scenario 'an admin sees succes message when hiding a promotion' do
+    promotion.visible = true
+    promotion.save
+    visit admin_promotions_path
+    click_link 'Verbergen'
+    expect(page).to have_content "De actie is nu verborgen"
+  end
+
+  scenario 'an admin sees succes message when making a promotion visible' do
+    promotion.visible = false
+    promotion.save
+    visit admin_promotions_path
+    click_link 'Tonen'
+    expect(page).to have_content "De actie is nu zichtbaar"
   end
 end

@@ -88,4 +88,20 @@ feature 'Admin interacts with treatments' do
     expect(page).to have_css 'p', text: "De behandeling werd verwijderd"
     expect(page).to_not have_css 'a', text: "title1"
   end
+
+  scenario 'an admin sees success message when hiding a treatment' do
+  treatment.visible = true
+  treatment.save
+  visit admin_treatments_path
+  click_link 'Verbergen'
+  expect(page).to have_content "De behandeling is nu verborgen"
+  end
+
+  scenario 'an admin sees success message when making treatment visible' do
+  treatment.visible = false
+  treatment.save
+  visit admin_treatments_path
+  click_link 'Tonen'
+  expect(page).to have_content "De behandeling is nu zichtbaar"
+  end
 end

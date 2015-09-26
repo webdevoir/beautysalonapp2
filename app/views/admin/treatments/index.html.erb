@@ -16,7 +16,8 @@
         <%= content_tag_for :tr, treatment do %>
           <td><%= link_to treatment.title, admin_treatment_path(treatment) %></td>
           <td><%= link_to "Aanpassen", edit_admin_treatment_path(treatment) %>&nbsp;&nbsp;
-            <%= link_to "Verwijderen", admin_treatment_path(treatment), method: :delete, data: { confirm: "Ben je zeker?" } %></td>
+            <%= link_to "Verwijderen", admin_treatment_path(treatment), method: :delete, data: { confirm: "Ben je zeker?" } %>&nbsp;&nbsp;
+          <%= link_to toggle_visibility(treatment), hide_admin_treatment_path(treatment), method: :patch, remote: true, id: dom_id(treatment) %></td>
           <% end %>
       <% end %>
     <% else %>

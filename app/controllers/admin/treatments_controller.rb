@@ -51,6 +51,12 @@ class Admin::TreatmentsController < ApplicationController
     redirect_to admin_treatments_path, notice: "De behandeling werd verwijderd"
   end
 
+  def hide
+    @treatment = Treatment.friendly.find(params[:id])
+    @treatment.toggle_visibility!
+    render "hide.js.erb"
+  end
+
   def sort
     params[:treatment].each_with_index do |id, index|
      Treatment.where(id: id).update_all({position: index+1})

@@ -1,0 +1,8 @@
+$link = $("#treatment_<%= @treatment.id %>");
+$link.text("<%= toggle_visibility(@treatment) %>");
+if ($link.text() == "Verbergen") {
+  $(".messages").empty().append("<p class='notice'>De behandeling is nu zichtbaar</p>");
+}
+  else {
+    $(".messages").empty().append("<p class='notice'>De behandeling is nu verborgen</p>");
+}

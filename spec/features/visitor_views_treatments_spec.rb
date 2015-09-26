@@ -4,7 +4,7 @@ feature 'Visitor visits treatments page' do
   scenario 'visitor views treatments' do
     category1 = Category.create(name: "gelaatsverzorgingen")
     category2 = Category.create(name: "lichaamsverzorgingen")
-    treatment1 = create(:treatment)
+    treatment1 = create(:treatment, visible: true)
     treatment1.category = category1
     treatment1.save
     treatment2 = create(:treatment)
@@ -22,5 +22,20 @@ feature 'Visitor visits treatments page' do
     within(".behandeling") { expect(page).to have_xpath("//img[contains(@src,'#{File.basename(treatment1.image.url)}')]") }
     within(".content") { expect(page).to have_css 'p', text: treatment1.description }
     within(".content") { expect(page).to have_content "#{treatment1.price}" }
+  end
+
+  scenario 'visitor views treatments page and does not see hidden treatments' do
+    category1 = Category.create(name: "gelaatsverzorgingen")
+    treatment1 = create(:treatment, visible: true)
+    treatment1.category = category1
+    treatment1.save
+    treatment2 = create(:treatment, visible: false)
+    treatment2.category = category1
+    treatment2.save
+
+    visit category_path(category: category1.name) 
+
+    within(".item") { expect(page).to have_css 'h1', text: treatment1.title }
+    within(".item") { expect(page).not_to have_css 'h1', text: treatment2.title }
   end
 end

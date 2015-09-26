@@ -51,7 +51,7 @@ feature 'Visitor visits homepage' do
   scenario 'visitor views section' do
     category = Category.create(name: "gelaatsverzorging")
     section = create(:section, category_id: category.id)
-    behandeling = create(:treatment, category_id: category.id)
+    behandeling = create(:treatment, category_id: category.id, visible: true)
 
     visit root_path
 
