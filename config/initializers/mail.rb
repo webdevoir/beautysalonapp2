@@ -2,7 +2,7 @@ ActionMailer::Base.smtp_settings = {
   address: "smtp.mandrillapp.com",
   port: 587,
   enable_starttls_auto: true,
-  user_name: "anthony.candaele@webmove.be",
+  user_name: "info@anthonycandaele.com",
   password: Rails.application.secrets.mail_password,
   authentication: "login"
 }
