@@ -25,7 +25,7 @@
 
   <% @sections.in_groups_of(3, false) do |sections| %>
   <div class="behandelingen">
-    <%= render partial: "section", collection: sections %>
+    <%= render partial: "section", collection: sections, locals: { products: @products, behandelingen: @behandelingen } %>
   </div>
   <% end %>
 </section>

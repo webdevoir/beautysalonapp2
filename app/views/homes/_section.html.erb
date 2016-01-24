@@ -5,11 +5,11 @@
     <p><%= section.description %></p>
     <ul class="fa-ul">
       <% if is_product_category?(section.category_id) %>
-        <% @products.each do |product| %>
+        <% products.each do |product| %>
           <li><%= link_to product.title, producten_path %></li>
         <% end %>
       <% else %>
-        <% @behandelingen.each do |behandeling| %>
+        <% behandelingen.each do |behandeling| %>
           <% if belongs_to_section?(behandeling, section) %>
               <% if behandeling.visible? %>
               <li><%= link_to behandeling.title, behandeling_path(behandeling) %></li>

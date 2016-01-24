@@ -1,4 +1,4 @@
-<%= form_for [:admin, @treatment], html: { id: "treatment-form", multipart: true } do |f| %>
+<%= form_for [:admin, treatment], html: { id: "treatment-form", multipart: true } do |f| %>
   <fieldset>
     <div>
       <%= f.label :category_id, "Categorie" %>
@@ -21,8 +21,8 @@
       <%= f.text_area :description, size: "20x10" %>
     </div>
     <div>
-      <% if @treatment.image.present? %>
-        <%= image_tag @treatment.image.url %>
+      <% if treatment.image.present? %>
+        <%= image_tag treatment.image.url %>
         <%= f.check_box :remove_image %>
         verwijder afbeelding</p>
       <% end %>
@@ -33,7 +33,7 @@
       <%= f.label :price, "Prijs" %>
       <%= f.text_field :price, maxlength: 5, class: "price" %>
     </div>
-    <% if @treatment.new_record? %>
+    <% if treatment.new_record? %>
       <%= f.button "Behandeling Toevoegen" %>
     <% else %>
       <%= f.button "Behandeling Aanpassen" %>
