@@ -29,7 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # image processing and upload
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.8.1'
-gem 'fog', '~> 1.24.0'
+gem 'fog', '~> 1.37'
 
 # Sass tools
 gem 'bourbon'
