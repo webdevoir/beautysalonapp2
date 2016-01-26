@@ -1,3 +1,4 @@
+set :rbenv_ruby, '2.2.1'
 set :application, 'beautysalon'
 set :repo_url, 'git@github.com:acandael/beautysalonapp2.git'
 
