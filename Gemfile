@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -46,15 +46,12 @@ group :development do
   gem 'lol_dba'
 end
 
-
-
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara', '~> 2.4.4'
   gem 'launchy', '~> 2.4.2'
   gem 'factory_girl_rails', '~> 4.5.0'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '~> 3.1.0'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
