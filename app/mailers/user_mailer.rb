@@ -3,6 +3,6 @@ class UserMailer < ActionMailer::Base
 
   def contact_email(contact)
     @contact = contact
-    mail(to: Rails.application.secrets.owner_email, from: @contact.email, :subject => "Website Contact")
+    mail(to: Rails.application.secrets.owner_email, from: "info@anniek-lambrecht.be", :subject => "Website Contact")
   end
 end
