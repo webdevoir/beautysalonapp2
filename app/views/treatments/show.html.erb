@@ -18,7 +18,7 @@
       <p class="price"><strong>Prijs:</strong> &euro; <%= sprintf("%g", @treatment.price) %></p>
     <% end %>
     <div class="cta">
-      <%= button_to "Maak een Afspraak", new_contact_path, method: "get" %>
+      <%= button_to "Online afspraak maken", "https://schoonheidsinstituut-anniek-lambrecht-1.salonized.com/bookings/new", method: "get" %>
     </div>
   </div>
 </article>

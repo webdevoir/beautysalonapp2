@@ -2,19 +2,8 @@
 <% content_for :description, "Graag neem ik je afspraak telefonisch aan. Tijdens behandelingen wordt er niet opgenomen maar laat uw naam en telefoon na dan bel ik u zeker terug" %>
 <section class="contact">
   <h1>Maak een afspraak</h1>
-  <%= simple_form_for @contact do |f| %>
-    <fieldset>
-      <%= f.input :name, label: "Naam" %>
-      <%= f.input :email, label: "Email" %>
-      <%= f.input :phone, label: "Telefoon" %>
-      <%= f.input :message, as: :text, label: "Gewenste behandeling" %> 
-      (vermeld ook de datum waarop je een afspraak wenst)
-      <div class="cta">
-        <br />
-        <%= f.button :submit, "Maak een Afspraak" %>
-      </div>
-    </fieldset>
-  <% end %>
+  <p>Kies online een behandeling en een vrije plaats in mijn agenda.</p>
+  <%= button_to "Online afspraak maken", "https://schoonheidsinstituut-anniek-lambrecht-1.salonized.com/bookings/new", method: "get" %>
   <aside>
     <h2>Contact</h2>
     <p>
