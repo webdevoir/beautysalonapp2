@@ -42,6 +42,7 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1.3'
   gem 'capistrano-rails', '~> 1.1.2'
   gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-ssh-doctor', '~> 1.0'
   gem 'lol_dba'
 end
 
