@@ -16,34 +16,18 @@ section.contact {
       margin-bottom: em(20);
     }
   }
-  form {
-    padding-top: 1em;
-    margin-bottom: em(40);
-    @include media($medium-screen) {
-      @include span-columns(8);
-      padding: 3em;
-      padding-left: 0;
-      padding-top: 0;
-    }
-
-    .error {
-      color: darken(red, 20); 
-    }
-    
-    .cta {
-      text-align: center;
-    }
-  }
 
   aside {
     @include media($medium-screen) {
       @include span-columns(4);
+      @include shift(8);
       @include omega();
     }
     padding: 2em;
     padding-top: 1em;
     padding-bottom: 1em;
     border: 3px solid $medium-gray;
+    margin-bottom: 2em;
 
     h2 {
       margin-bottom: em(5);
