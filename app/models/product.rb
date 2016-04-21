@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   validates :title, :description, presence: true 
-  validates_uniqueness_of :title, case_sensitive: false
+  validates_uniqueness_of :title
 
   scope :order_by_position, ->{ all.order(:position) }
 
