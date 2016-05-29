@@ -47,6 +47,9 @@ GEM
       thor (~> 0.19)
     breadcrumbs_on_rails (2.3.1)
     builder (3.2.2)
+    bullet (5.0.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.9.0)
     byebug (8.2.1)
     capistrano (3.2.1)
       i18n
@@ -351,6 +354,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uniform_notifier (1.9.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -370,6 +374,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bourbon
   breadcrumbs_on_rails (~> 2.3.0)
+  bullet
   byebug
   capistrano (~> 3.2.1)
   capistrano-bundler (~> 1.1.3)

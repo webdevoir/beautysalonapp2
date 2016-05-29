@@ -44,6 +44,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-ssh-doctor', '~> 1.0'
   gem 'lol_dba'
+  gem 'bullet'
 end
 
 group :development, :test do
