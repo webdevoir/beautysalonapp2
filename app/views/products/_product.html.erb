@@ -3,5 +3,5 @@
     <h1><%= product.title %></h1>
   </header>
   <%= image_for(product) %>
-  <p><%= sanitize product.description, tags: %w(strong p i ul li) %></p>
+  <p><%= sanitize product.description, tags: %w(strong p i ul li a) %></p>
 </div>
