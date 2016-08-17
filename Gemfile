@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.7.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -45,6 +45,7 @@ group :development do
   gem 'capistrano-ssh-doctor', '~> 1.0'
   gem 'lol_dba'
   gem 'bullet'
+  gem 'web-console', '~> 2.0'
 end
 
 group :development, :test do
@@ -54,7 +55,6 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'shoulda-matchers', '~> 3.1.0'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
