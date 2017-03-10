@@ -268,13 +268,14 @@ header.navigation {
     }
   }
 
-  a.phone {
+  a.phone, .fb-like {
+    margin-right: .5em;
     @include media($medium-screen) {
       margin-top: 1.2em;
       margin-right: em(40);
     }
     @include media($large-screen) {
-      margin-right: 0;
+      margin-right: 1em;
     }
     float: right;
     font-weight: 800;

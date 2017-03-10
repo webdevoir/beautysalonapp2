@@ -17,6 +17,8 @@
     <div class="navigation-tools">
       <% if !current_user_admin? %>
         <a href="tel:050694165" class="phone"><i class="fa fa-phone left"></i>050/694165</a>
+
+      <div class="fb-like" data-href="https://www.facebook.com/Instituut-voor-Huidverbetering-Anniek-Lambrecht-Skin-Coach-531106993649513/?ref=hl" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
       <% end %>
       <% if current_user_admin? %>
         <%= link_to "Admin", admin_path, class: "sign-up" %>
