@@ -11,7 +11,7 @@
   </div>
   <%= render "shared/footer" %>
   <%= yield(:javascript) %>
-  <div id="fb-root"></div>
+  <%= render 'layouts/popup' %>
   <script>
     (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -58,7 +58,6 @@
       Salonized.init({accountName: 'schoonheidsinstituut-anniek-lambrecht-1'});
   }
   </script>
-  <%= render 'layouts/popup' %>
 </body>
 </html>
 
