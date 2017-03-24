@@ -1,31 +1,28 @@
 <script type='text/javascript'>
-jQuery(document).ready(function($){
-if($.cookie('popup_user_login') != 'yes'){
-$('#fanback').delay(10000).fadeIn('medium');
-$('#TheBlogWidgets, #fan-exit').click(function(){
-$('#fanback').stop().fadeOut('medium');
-});
-}
-$.cookie('popup_user_login', 'yes', { path: '/', expires: 7 });
-});
+  jQuery(document).ready(function($){
+    if($.cookie('popup_user_login') != 'yes'){
+      $('#fanback').delay(5000).fadeIn('medium');
+      $('#TheBlogWidgets, #fan-exit').click(function(){
+        $('#fanback').stop().fadeOut('medium');
+      });
+    }
+    //$.cookie('popup_user_login', 'yes', { path: '/', expires: 7 });
+  });
 </script>
  
 <div id='fanback'>
-  <div id='fan-exit'>
-  </div>
+  <div id='fan-exit'></div>
   <div id='JasperRoberts'>
-    <div id='TheBlogWidgets'>
-    </div>
-    <div class='remove-borda'>
-    </div>
+    <div id='TheBlogWidgets'></div>
+    <div class='remove-borda'></div>
     <iframe allowtransparency='true' frameborder='0' scrolling='no' src='//www.facebook.com/plugins/likebox.php?
     
-    href=https://www.facebook.com/Instituut-voor-Huidverbetering-Anniek-Lambrecht-Skin-Coach-531106993649513/?ref=hl&width=402&height=255&colorscheme=light&show_faces=true&show_border=false&stream=false&header=false'
+    href=https://www.facebook.com/Instituut-voor-Huidverbetering-Anniek-Lambrecht-Skin-Coach-531106993649513/?ref=hl&width=502&height=255&colorscheme=light&show_faces=true&show_border=false&stream=false&header=false'
 
     
-    style='border: none; overflow: hidden; margin-top: -19px; width: 402px; height: 230px;'></iframe>
-    <center>
-      <span style="color:#a8a8a8;font-size:8px;" id="linkit">Powered by <a style="color:#a8a8a8;font-size:8px;" href="http://jasperroberts.com">Jasper Roberts</a> - <a style="color:#a8a8a8;font-size:8px;" href="http://www.theblogwidgets.com">Blog</a></span>
-    </center>
+    style='border: none; overflow: hidden; margin-top: -25px; width: 502px; height: 200px;'></iframe>
+    <!-- <center> -->
+    <!--   <span style="color:#a8a8a8;font&#45;size:8px;" id="linkit">Powered by <a style="color:#a8a8a8;font&#45;size:8px;" href="http://jasperroberts.com">Jasper Roberts</a> &#45; <a style="color:#a8a8a8;font&#45;size:8px;" href="http://www.theblogwidgets.com">Blog</a></span> -->
+    <!-- </center> -->
   </div>
 </div>
